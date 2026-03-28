@@ -28,8 +28,8 @@
         const radius = 180;   // Bigger size
         const speed = 0.008;  // Slower, continuous transition
         const dotSize = 3;    // Dot size
-        const lineColor = '#4a90e2'; // Brand blue
-        const secondaryLineColor = '#9333ea'; // Purple accent
+        const lineColor = '#6366f1'; // Indigo-purple
+        const secondaryLineColor = '#818cf8'; // Lighter indigo
         const dotColor = '#ffffff';
         const mouseInfluence = 200; // Larger distance of mouse influence
         const mouseStrength = 0.15; // Strength of attraction (0-1)
@@ -141,7 +141,7 @@
 
             // Draw more interconnective lines (thicker and more visible)
             ctx.beginPath();
-            ctx.strokeStyle = 'rgba(74, 144, 226, 0.25)'; // Brand blue with transparency
+            ctx.strokeStyle = 'rgba(99, 102, 241, 0.25)'; // Indigo-purple with transparency
             ctx.lineWidth = 1.5; // Same as outer lines
             for (let i = 0; i < points.length; i++) {
                 // Connect to multiple partners for denser network
