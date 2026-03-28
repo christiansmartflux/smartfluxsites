@@ -1,7 +1,11 @@
 {
   "permissions": {
     "allow": [
-      "Bash(ls \"c:\\\\Users\\\\chris\\\\smartfluxai\\\\public\\\\content\"\" | grep \"console-experience \")"
+      "Bash(ls \"c:\\\\Users\\\\chris\\\\smartfluxai\\\\public\\\\content\"\" | grep \"console-experience \")",
+      "Bash(npm start:*)",
+      "Bash(npm install:*)",
+      "Bash(firebase login:*)",
+      "Bash(firebase projects:list)"
     ]
   }
 }

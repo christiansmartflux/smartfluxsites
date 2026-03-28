@@ -273,6 +273,21 @@
             });
         })();
     </script>
+    <script type="module">
+        import { initializeApp } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-app.js";
+        import { getAnalytics } from "https://www.gstatic.com/firebasejs/11.6.0/firebase-analytics.js";
+        const firebaseConfig = {
+            apiKey: "AIzaSyBVKiwzHGbIkyBHWcnjklj3uu6xGISCBig",
+            authDomain: "smartfluxsites.firebaseapp.com",
+            projectId: "smartfluxsites",
+            storageBucket: "smartfluxsites.firebasestorage.app",
+            messagingSenderId: "451742589262",
+            appId: "1:451742589262:web:a89f78f7117032fcf8fe1f",
+            measurementId: "G-YZWHQEL06Z"
+        };
+        const app = initializeApp(firebaseConfig);
+        const analytics = getAnalytics(app);
+    </script>
     <script src="language.js"></script>
     <script src="chat-widget.js"></script>
     <script src="animation.js"></script>
