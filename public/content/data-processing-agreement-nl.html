@@ -1,0 +1,86 @@
+<!-- Data Processing Agreement (DPA) -->
+<main class="flex-grow">
+    <section class="max-w-4xl mx-auto px-6 py-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Data Processing Agreement (DPA)</h1>
+        <p class="text-lg text-slate-600 mb-10">
+            Deze overeenkomst beschrijft hoe smartflux persoonsgegevens verwerkt namens Klanten in lijn met de GDPR.
+        </p>
+
+        <ol class="list-decimal pl-6 space-y-8 text-slate-700">
+            <li>
+                <h2 class="text-xl font-semibold text-slate-900 mb-2">Reikwijdte en rollen</h2>
+                <p>
+                    Deze Data Processing Agreement is van toepassing op de verwerking van persoonsgegevens door smartflux namens
+                    de Klant. Binnen het kader van de GDPR treedt de Klant op als Verwerkingsverantwoordelijke (Data Controller)
+                    en smartflux als Verwerker (Data Processor).
+                </p>
+            </li>
+            <li>
+                <h2 class="text-xl font-semibold text-slate-900 mb-2">Beheerde infrastructuur &amp; EU-residentie</h2>
+                <p class="mb-3">smartflux zet in op een hoog niveau van data-soevereiniteit.</p>
+                <ul class="list-disc list-inside pl-6 space-y-2">
+                    <li>
+                        Orchestratie: Onze kern-automatisatie-engine (n8n) is self-hosted op private instanties binnen Microsoft
+                        Azure datacenters die zich strikt binnen de Europese Economische Ruimte (EER) bevinden.
+                    </li>
+                    <li>
+                        Data in rust: Alle Klantdata die in gekoppelde databases worden opgeslagen (inclusief Firebase, Pinecone
+                        en Google Drive) zijn geconfigureerd met EU Data Residency, zodat opslag binnen Europese jurisdictie blijft.
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <h2 class="text-xl font-semibold text-slate-900 mb-2">Verwerking via AI-modellen</h2>
+                <p class="mb-3">
+                    De Klant machtigt smartflux om data te verwerken via geselecteerde Large Language Model (LLM) leveranciers
+                    (zoals OpenAI of Google). smartflux waarborgt dat:
+                </p>
+                <ul class="list-disc list-inside pl-6 space-y-2">
+                    <li>Data wordt verwerkt via Europese API-endpoints waar dit door de provider wordt ondersteund.</li>
+                    <li>Prompt data niet door derde partijen wordt gebruikt om publieke modellen te trainen (Enterprise/API privacy-standaarden).</li>
+                </ul>
+            </li>
+            <li>
+                <h2 class="text-xl font-semibold text-slate-900 mb-2">Geautoriseerde subverwerkers</h2>
+                <p class="mb-3">
+                    De Klant geeft algemene toestemming aan smartflux om de volgende subverwerkers in te schakelen voor de
+                    uitvoering van de diensten:
+                </p>
+                <ul class="list-disc list-inside pl-6 space-y-2">
+                    <li>Microsoft Azure (EER): Hosting en infrastructuur.</li>
+                    <li>Google Cloud/Firebase (EER): Database en opslag.</li>
+                    <li>Pinecone (EER): Vector database voor AI-geheugen.</li>
+                    <li>OpenAI/Anthropic/Google: AI-inferentie verwerking.</li>
+                </ul>
+            </li>
+            <li>
+                <h2 class="text-xl font-semibold text-slate-900 mb-2">Beveiligingsmaatregelen</h2>
+                <p class="mb-3">
+                    smartflux implementeert strikte technische en organisatorische maatregelen om persoonsgegevens te beschermen
+                    en fungeert als een "Digital Vault" voor uw processen:
+                </p>
+                <ul class="list-disc list-inside pl-6 space-y-2">
+                    <li>Encryptie: end-to-end versleuteling voor data in transit (TLS) en in rust (AES-256).</li>
+                    <li>Isolatie: strikte logische scheiding van data tussen verschillende Klanten.</li>
+                    <li>Toegangscontrole: multi-factor authenticatie (MFA) en versleutelde environment variables voor alle API-integraties.</li>
+                </ul>
+            </li>
+            <li>
+                <h2 class="text-xl font-semibold text-slate-900 mb-2">Melding van datalekken</h2>
+                <p>
+                    Bij een bevestigd datalek stelt smartflux de Klant onverwijld op de hoogte, en in ieder geval binnen 48 uur
+                    nadat het datalek is vastgesteld, met alle informatie die nodig is voor de Klant om aan wettelijke verplichtingen
+                    te voldoen.
+                </p>
+            </li>
+            <li>
+                <h2 class="text-xl font-semibold text-slate-900 mb-2">Audit en verwijdering</h2>
+                <p>
+                    Na beeindiging van de overeenkomst zal smartflux, naar keuze van de Klant, alle persoonsgegevens verwijderen
+                    of teruggeven, tenzij Europees of nationaal recht opslag van de data vereist.
+                </p>
+            </li>
+        </ol>
+    </section>
+</main>
+

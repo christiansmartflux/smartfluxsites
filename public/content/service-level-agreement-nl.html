@@ -1,0 +1,90 @@
+<!-- Service Level Agreement (SLA) -->
+<main class="flex-grow">
+    <section class="max-w-4xl mx-auto px-6 py-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Service Level Agreement (SLA)</h1>
+        <p class="text-lg text-slate-600 mb-10">
+            Deze SLA beschrijft beschikbaarheidsdoelen, supportreacties en onderhoudsprocessen voor smartflux diensten.
+        </p>
+
+        <ol class="list-decimal pl-6 space-y-8 text-slate-700">
+            <li>
+                <h2 class="text-xl font-semibold text-slate-900 mb-2">Beschikbaarheid en uptime</h2>
+                <p class="mb-3">
+                    smartflux streeft naar hoge beschikbaarheid van alle gedeployde AI-tools. De Klant erkent echter dat de
+                    dienstverlening afhankelijk is van externe infrastructuur:
+                </p>
+                <ul class="list-disc list-inside pl-6 space-y-2">
+                    <li>Kernplatform: gehost op Microsoft Azure (EER). Wij streven naar 99,9% infrastructuur uptime.</li>
+                    <li>AI-verwerking: afhankelijk van de beschikbaarheid van API leveranciers (OpenAI, Google, Anthropic).</li>
+                    <li>Automatisering: beheerd via n8n.</li>
+                </ul>
+                <p class="mt-3">
+                    smartflux is niet verantwoordelijk voor serviceonderbrekingen door uitval van deze externe leveranciers.
+                </p>
+            </li>
+            <li>
+                <h2 class="text-xl font-semibold text-slate-900 mb-2">Supportniveaus en responsetijden</h2>
+                <p class="mb-4">
+                    Supportverzoeken worden ingedeeld op ernst. smartflux doet commercieel redelijke inspanningen om te reageren
+                    binnen de volgende termijnen tijdens Werkuren (maandag - vrijdag, 09:00 - 17:00 CET):
+                </p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border border-gray-200 text-sm">
+                        <thead class="bg-gray-50 text-gray-700">
+                            <tr>
+                                <th class="px-4 py-2 border-b">Ernstniveau</th>
+                                <th class="px-4 py-2 border-b">Definitie</th>
+                                <th class="px-4 py-2 border-b">Streefreactietijd</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="px-4 py-2 border-b font-semibold">Kritiek</td>
+                                <td class="px-4 py-2 border-b">Kern AI-tool is niet beschikbaar; bedrijfskritisch proces ligt stil.</td>
+                                <td class="px-4 py-2 border-b">&lt; 24 Werkuren</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2 border-b font-semibold">Hoog</td>
+                                <td class="px-4 py-2 border-b">Significante storing; workaround beschikbaar maar inefficient.</td>
+                                <td class="px-4 py-2 border-b">&lt; 48 Werkuren</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2 font-semibold">Midden/Laag</td>
+                                <td class="px-4 py-2">Kleine bugs, cosmetische issues of algemene vragen.</td>
+                                <td class="px-4 py-2">&lt; 5 Werkdagen</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+            <li>
+                <h2 class="text-xl font-semibold text-slate-900 mb-2">Onderhoudsvensters</h2>
+                <p class="mb-3">
+                    Om de "Digital Vault" veilig te houden, voert smartflux periodiek onderhoud en beveiligingsupdates uit.
+                </p>
+                <ul class="list-disc list-inside pl-6 space-y-2">
+                    <li>Gepland onderhoud: De Klant wordt minimaal 24 uur vooraf geinformeerd als downtime wordt verwacht.</li>
+                    <li>Urgent onderhoud: Kritieke security patches kunnen direct worden toegepast om data-integriteit te beschermen.</li>
+                </ul>
+            </li>
+            <li>
+                <h2 class="text-xl font-semibold text-slate-900 mb-2">Uitsluitingen</h2>
+                <p class="mb-3">De support- en uptime-doelen gelden niet voor:</p>
+                <ul class="list-disc list-inside pl-6 space-y-2">
+                    <li>Fouten veroorzaakt door wijzigingen van de Klant aan AI-tools (inclusief n8n configuraties) of API-instellingen.</li>
+                    <li>Issues door onjuiste data-invoer door de Klant of eindgebruikers.</li>
+                    <li>"Force Majeure" gebeurtenissen (wereldwijde internetstoringen of grote provideruitval).</li>
+                </ul>
+            </li>
+            <li>
+                <h2 class="text-xl font-semibold text-slate-900 mb-2">Correctieve actie</h2>
+                <p>
+                    Indien een AI-tool faalt door een bug in de door smartflux ontwikkelde logica, prioriteren wij een fix zonder
+                    extra kosten. Als de storing het gevolg is van een wijziging bij een derde partij API (bijv. een OpenAI update),
+                    kan het benodigde werk om de AI-tool aan te passen worden gefactureerd tegen het standaard uurtarief.
+                </p>
+            </li>
+        </ol>
+    </section>
+</main>
+

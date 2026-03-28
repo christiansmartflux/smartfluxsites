@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>smartflux - Custom AI Solutions</title>
+    <link rel="icon" type="image/png" href="/slides/favicon.png">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/tailwind-build.css">
+</head>
+<body class="bg-white text-slate-800 font-sans antialiased pt-20">
+
+    <!-- Header Component -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/60 backdrop-blur-md border-b border-gray-100/50 shadow-sm">
+        <nav class="max-w-7xl mx-auto px-6 py-4 flex items-center justify-between">
+            <div class="text-2xl font-bold tracking-tight text-black"><a href="/" class="logo-link">smartflux</a></div>
+            <div class="hidden md:flex items-center space-x-8 font-medium text-base">
+                <a href="/" class="text-gray-600 hover:text-brand-blue transition" data-i18n="nav_home">Home</a>
+                <div class="nav-dropdown">
+                    <a href="/console" class="text-gray-600 hover:text-brand-blue transition cursor-pointer" data-i18n="nav_console">Console</a>
+                    <div class="dropdown-menu bg-white/60 backdrop-blur-md border-gray-100/50">
+                        <a href="/console" data-i18n="nav_console_learn">Learn about the Console</a>
+                        <a href="/console-experience" data-i18n="nav_console_experience">Experience the Console</a>
+                    </div>
+                </div>
+                <div class="nav-dropdown">
+                    <a href="/case-studies" class="text-gray-600 hover:text-brand-blue transition cursor-pointer" data-i18n="nav_case_studies">Case Studies</a>
+                    <div class="dropdown-menu bg-white/60 backdrop-blur-md border-gray-100/50">
+                        <a href="/case-studies#case1">Intelligent Customer Service</a>
+                        <a href="/case-studies#case2">Smart Invoice Processing</a>
+                        <a href="/case-studies#case3">Technical Knowledge Hub</a>
+                        <a href="/case-studies#case4">Sales Intelligence Agent</a>
+                        <a href="/case-studies#case5">Data Analytics Dashboard</a>
+                    </div>
+                </div>
+                <a href="/about" class="text-gray-600 hover:text-brand-blue transition" data-i18n="nav_about">About Us</a>
+                <a href="/contact" class="text-gray-600 hover:text-brand-blue transition" data-i18n="nav_contact">Contact</a>
+                <a href="https://console.smartflux.ai" class="gradient-button" data-i18n="nav_console_cta">Open the Console</a>
+                <button id="lang-toggle" class="language-toggle" title="Switch language">
+                    <span class="lang-code">EN</span>
+                </button>
+            </div>
+            <button id="mobile-menu-toggle" class="md:hidden text-gray-600" aria-label="Toggle navigation" aria-expanded="false">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+            </button>
+        </nav>
+        <div id="mobile-menu" class="md:hidden hidden border-t border-gray-200 bg-white/95 backdrop-blur shadow-lg">
+            <div class="px-6 py-4 space-y-4 text-base font-medium text-gray-700">
+                <a href="/" class="block py-1" data-i18n="nav_home">Home</a>
+                <a href="/console" class="block py-1" data-i18n="nav_console">Console</a>
+                <a href="/console" class="block py-1 pl-4 text-sm text-gray-500" data-i18n="nav_console_learn">Learn about the Console</a>
+                <a href="/console-experience" class="block py-1 pl-4 text-sm text-gray-500" data-i18n="nav_console_experience">Experience the Console</a>
+                <a href="/case-studies" class="block py-1" data-i18n="nav_case_studies">Case Studies</a>
+                <a href="/about" class="block py-1" data-i18n="nav_about">About Us</a>
+                <a href="/contact" class="block py-1" data-i18n="nav_contact">Contact</a>
+                <a href="https://console.smartflux.ai" class="inline-flex py-2 gradient-button" data-i18n="nav_console_cta">Open the Console</a>
+                <button id="lang-toggle-mobile" class="language-toggle" title="Switch language">
+                    <span class="lang-code">EN</span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <style>
+        /* Navigation Dropdown */
+        .nav-dropdown {
+            position: relative;
+        }
+        .nav-dropdown:hover .dropdown-menu {
+            display: block;
+        }
+        .dropdown-menu {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            min-width: 200px;
+            z-index: 50;
+        }
+        .dropdown-menu a {
+            display: block;
+            padding: 12px 16px;
+            color: #374151;
+            text-decoration: none;
+            font-weight: 500;
+            transition: background-color 0.2s;
+            background-color: rgba(255, 255, 255, 0.85);
+        }
+        .dropdown-menu a:hover {
+            background-color: rgba(243, 244, 246, 0.98);
+            color: #1f2937;
+        }
+
+        /* Language Toggle Button */
+        .language-toggle {
+            padding: 7px 12px;
+            font-size: 0.85em;
+            font-weight: 600;
+            text-decoration: none;
+            color: #374151;
+            background-color: #F9FAFB;
+            border: 2px solid #D1D5DB;
+            border-radius: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .language-toggle:hover {
+            background-color: #F3F4F6;
+            border-color: #9CA3AF;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .lang-code {
+            font-weight: 600;
+            letter-spacing: 0.5px;
+        }
+
+        /* Go to Console Button */
+        .gradient-button {
+            padding: 7px 15px;
+            font-size: 0.9em;
+            font-weight: 600;
+            text-decoration: none;
+            color: #ffffff;
+            background-color: #000000;
+            border: 2px solid #000000;
+            border-radius: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            cursor: pointer;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Disabled/Loading State */
+        .gradient-button:disabled,
+        .gradient-button.loading {
+            padding: 8px 16px;
+            background-color: #666666;
+            border-color: #666666;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            cursor: not-allowed;
+        }
+
+        /* Hover State - Blue Gradient */
+        .gradient-button:hover:not(:disabled):not(.loading) {
+            background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+            color: #000000;
+            border-color: #4a90e2;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+        }
+
+        /* Active/Pressed State */
+        .gradient-button:active:not(:disabled):not(.loading) {
+            transform: translateY(1px);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+        }
+
+        /* Mobile menu positioning */
+        #mobile-menu {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 100%;
+            z-index: 40;
+        }
+    </style>
+
+    <!-- Scroll anchor -->
+    <div id="top"></div>
+
+    <!-- Content Container - SPA Router loads page content here -->
+    <div id="content-container">
+        <!-- Page content loads here dynamically -->
+    </div>
+
+    <!-- Footer Component -->
+    <hr class="border-t border-gray-200 w-full">
+    <footer class="bg-white text-slate-800 py-8 mt-2">
+        <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+            <div>
+                <h4 class="font-bold mb-4 text-lg" data-i18n="footer_contact">Contact</h4>
+                <p class="text-gray-400 mb-2"><a href="/contact" class="hover:text-brand-blue transition" data-i18n="nav_contact">Contact</a></p>
+                <p class="text-gray-400 mb-2"><a href="https://instagram.com/smartflux.ai" class="hover:text-brand-blue transition">@smartflux.ai</a></p>
+                <p class="text-gray-400 mb-4">(+31) 6 390-308-61</p>
+                <p class="text-gray-400 mb-6">
+                    Vlotlaan 805a<br>
+                    2681 TZ, Monster
+                </p>
+                <p class="text-gray-400 text-sm" data-i18n="footer_designed_by">Website designed and operated by smartflux</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-lg" data-i18n="footer_quick_links">Quick Links</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="/" class="hover:text-brand-blue transition" data-i18n="nav_home">Home</a></li>
+                    <li><a href="/case-studies" class="hover:text-brand-blue transition" data-i18n="nav_case_studies">Case Studies</a></li>
+                    <li><a href="/console" class="hover:text-brand-blue transition" data-i18n="nav_console">Console</a></li>
+                    <li><a href="/console-experience" class="hover:text-brand-blue transition" data-i18n="nav_console_experience">Experience the Console</a></li>
+                    <li><a href="/about" class="hover:text-brand-blue transition" data-i18n="nav_about">About Us</a></li>
+                    <li><a href="/contact" class="hover:text-brand-blue transition" data-i18n="nav_contact">Contact</a></li>
+                </ul>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4 text-lg" data-i18n="footer_legal">Legal</h4>
+                <ul class="space-y-2 text-gray-400">
+                    <li><a href="/legal/terms-of-service" class="hover:text-brand-blue transition" data-i18n="legal_terms_of_service">Terms of Service</a></li>
+                    <li><a href="/legal/liability-ai-disclaimer" class="hover:text-brand-blue transition" data-i18n="legal_liability_disclaimer">Liability & AI Disclaimer</a></li>
+                    <li><a href="/legal/data-processing-agreement" class="hover:text-brand-blue transition" data-i18n="legal_dpa">Data Processing Agreement</a></li>
+                    <li><a href="/legal/intellectual-property-rights" class="hover:text-brand-blue transition" data-i18n="legal_ip_rights">Intellectual Property Rights</a></li>
+                    <li><a href="/legal/service-level-agreement" class="hover:text-brand-blue transition" data-i18n="legal_sla">Service Level Agreement</a></li>
+                    <li><a href="/legal/usage-api-billing" class="hover:text-brand-blue transition" data-i18n="legal_usage_api_billing">Usage & API Billing</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-6 mt-12 pt-8 border-t border-gray-200 text-center text-gray-600 text-sm">
+            <span data-i18n="footer_rights">&copy; 2025 smartflux. All rights reserved.</span>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile nav toggle
+        (function() {
+            const toggle = document.getElementById('mobile-menu-toggle');
+            const menu = document.getElementById('mobile-menu');
+            if (!toggle || !menu) return;
+
+            const closeMenu = () => {
+                menu.classList.add('hidden');
+                toggle.setAttribute('aria-expanded', 'false');
+            };
+
+            const openMenu = () => {
+                menu.classList.remove('hidden');
+                toggle.setAttribute('aria-expanded', 'true');
+            };
+
+            toggle.addEventListener('click', (e) => {
+                e.stopPropagation();
+                const isOpen = toggle.getAttribute('aria-expanded') === 'true';
+                if (isOpen) {
+                    closeMenu();
+                } else {
+                    openMenu();
+                }
+            });
+
+            // Close when clicking links or outside
+            menu.addEventListener('click', (event) => {
+                if (event.target.closest('a')) {
+                    closeMenu();
+                }
+            });
+
+            document.addEventListener('click', (event) => {
+                if (!menu.contains(event.target) && !toggle.contains(event.target)) {
+                    closeMenu();
+                }
+            });
+
+            // Close on viewport resize to desktop
+            window.addEventListener('resize', () => {
+                if (window.innerWidth >= 768) {
+                    closeMenu();
+                }
+            });
+        })();
+    </script>
+    <script src="language.js"></script>
+    <script src="chat-widget.js"></script>
+    <script src="animation.js"></script>
+    <script src="router.js"></script>
+</body>
+</html>

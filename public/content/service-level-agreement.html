@@ -1,0 +1,84 @@
+<!-- Service Level Agreement (SLA) -->
+<main class="flex-grow">
+    <section class="max-w-4xl mx-auto px-6 py-16">
+        <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Service Level Agreement (SLA)</h1>
+        <p class="text-lg text-slate-600 mb-10">
+            This SLA defines availability targets, support response times, and maintenance practices for smartflux services.
+        </p>
+
+        <ol class="list-decimal pl-6 space-y-8 text-slate-700">
+            <li>
+                <h2 class="text-xl font-semibold text-slate-900 mb-2">Service Availability &amp; Uptime</h2>
+                <p class="mb-3">smartflux aims for high availability of all deployed AI-tools. However, the Client acknowledges that the service relies on third-party infrastructure:</p>
+                <ul class="list-disc list-inside pl-6 space-y-2">
+                    <li>Core Engine: Hosted on Microsoft Azure (EEA). We aim for 99.9% infrastructure uptime.</li>
+                    <li>AI Processing: Dependent on the uptime of API providers (OpenAI, Google, Anthropic).</li>
+                    <li>Automations: Managed via n8n.</li>
+                </ul>
+                <p class="mt-3">
+                    smartflux is not responsible for service interruptions caused by outages of these external providers.
+                </p>
+            </li>
+            <li>
+                <h2 class="text-xl font-semibold text-slate-900 mb-2">Support Tiers &amp; Response Times</h2>
+                <p class="mb-4">
+                    Support requests are categorized by severity. smartflux will make commercially reasonable efforts to respond
+                    within the following timeframes during Business Hours (Monday – Friday, 09:00 - 17:00 CET):
+                </p>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border border-gray-200 text-sm">
+                        <thead class="bg-gray-50 text-gray-700">
+                            <tr>
+                                <th class="px-4 py-2 border-b">Severity Level</th>
+                                <th class="px-4 py-2 border-b">Definition</th>
+                                <th class="px-4 py-2 border-b">Target Response Time</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td class="px-4 py-2 border-b font-semibold">Critical</td>
+                                <td class="px-4 py-2 border-b">Core AI-tool is unavailable; business-critical process halted.</td>
+                                <td class="px-4 py-2 border-b">&lt; 24 Business Hours</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2 border-b font-semibold">High</td>
+                                <td class="px-4 py-2 border-b">Significant malfunction; workaround available but inefficient.</td>
+                                <td class="px-4 py-2 border-b">&lt; 48 Business Hours</td>
+                            </tr>
+                            <tr>
+                                <td class="px-4 py-2 font-semibold">Medium/Low</td>
+                                <td class="px-4 py-2">Minor bugs, cosmetic issues, or general questions.</td>
+                                <td class="px-4 py-2">&lt; 5 Business Days</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </li>
+            <li>
+                <h2 class="text-xl font-semibold text-slate-900 mb-2">Maintenance Windows</h2>
+                <p class="mb-3">To ensure the "Digital Vault" remains secure, smartflux periodically performs maintenance and security updates.</p>
+                <ul class="list-disc list-inside pl-6 space-y-2">
+                    <li>Planned Maintenance: The Client will be notified at least 24 hours in advance if downtime is expected.</li>
+                    <li>Emergency Maintenance: Critical security patches may be applied immediately to protect data integrity.</li>
+                </ul>
+            </li>
+            <li>
+                <h2 class="text-xl font-semibold text-slate-900 mb-2">Exclusions</h2>
+                <p class="mb-3">The support and uptime targets do not apply to:</p>
+                <ul class="list-disc list-inside pl-6 space-y-2">
+                    <li>Failures caused by the Client modifying the AI-tools (including n8n configurations) or API settings.</li>
+                    <li>Issues arising from incorrect data input by the Client or their end-users.</li>
+                    <li>"Force Majeure" events (global internet outages or major provider collapses).</li>
+                </ul>
+            </li>
+            <li>
+                <h2 class="text-xl font-semibold text-slate-900 mb-2">Corrective Action</h2>
+                <p>
+                    In the event that an AI-tool fails due to a bug in the logic developed by smartflux, we will prioritize a fix
+                    at no additional cost. If the failure is due to a change in the third-party API (e.g., an OpenAI update), the
+                    work required to adapt the AI-tool may be billed at our standard hourly rate.
+                </p>
+            </li>
+        </ol>
+    </section>
+</main>

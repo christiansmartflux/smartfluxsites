@@ -1,0 +1,26 @@
+{
+  "name": "smartfluxai",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "http-server --spa -p 8081",
+    "build:css": "tailwindcss -i ./public/tailwind.css -o ./public/tailwind-build.css --minify",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/christiansmartflux/smartfluxai.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/christiansmartflux/smartfluxai/issues"
+  },
+  "homepage": "https://github.com/christiansmartflux/smartfluxai#readme",
+  "devDependencies": {
+    "http-server": "^14.1.1",
+    "tailwindcss": "^3.4.17"
+  }
+}

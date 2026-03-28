@@ -1,0 +1,978 @@
+<!-- Home Page Content - Dutch -->
+<main class="home-main">
+<style>
+    /* Discover Console Button */
+    .discover-console-button, .discover-console-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 6px 20px;
+        font-size: 1.1em;
+        font-weight: 600;
+        text-decoration: none;
+        color: #FFFFFF;
+        background-color: #000000;
+        border: 2px solid #000000;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .home-main {
+        overflow-x: hidden;
+    }
+
+    /* Hover Effect: Inverts to Blue Gradient (NO LIFT) */
+    .discover-console-button:hover {
+        background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+        color: #000000;
+        border-color: #4A90E2;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    }
+
+    /* Look Case Studies Button */
+    .look-case-studies-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 6px 20px;
+        font-size: 1.1em;
+        font-weight: 600;
+        text-decoration: none;
+        color: #374151;
+        background-color: #F9FAFB;
+        border: 2px solid #D1D5DB;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    /* Hover Effect: Darkens slightly (NO LIFT) */
+    .look-case-studies-button:hover {
+        background-color: #F3F4F6;
+        border-color: #9CA3AF;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsive: Stack buttons on mobile */
+    @media (max-width: 480px) {
+        .hero-buttons-wrapper {
+            flex-direction: column;
+            align-items: flex-start;
+        }
+    }
+
+    /* See Case Studies Button */
+    .see-case-studies-button {
+        padding: 8px 8px;
+        font-size: 1em;
+        font-weight: 600;
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #000000;
+        border: 2px solid #000000;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        width: fit-content;
+    }
+
+    /* See Case Studies Button - Loading State */
+    .see-case-studies-button:disabled,
+    .see-case-studies-button.loading {
+        padding: 11px 21px;
+        background-color: #666666;
+        border-color: #666666;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        cursor: not-allowed;
+    }
+
+    /* See Case Studies Button - Hover */
+    .see-case-studies-button:hover:not(:disabled):not(.loading) {
+        background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+        color: #000000;
+        border-color: #4a90e2;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    }
+
+    /* See Case Studies Button - Active/Pressed State */
+    .see-case-studies-button:active:not(:disabled):not(.loading) {
+        transform: translateY(1px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Container */
+    .card-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 1.5rem;
+    }
+
+    /* Real-world section grid background */
+    .real-world-grid {
+        background-color: #f8fafc;
+        background-image:
+            linear-gradient(to right, rgba(74, 144, 226, 0.14) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(74, 144, 226, 0.14) 1px, transparent 1px);
+        background-size: 28px 28px;
+    }
+
+    @media (min-width: 768px) {
+      .card-container {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Card Title */
+    .card-title {
+      font-size: 1.25rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: #1f2937;
+    }
+
+    /* Card Description */
+    .card-description {
+      color: #6b7280;
+    }
+
+    /* Book Demo Button */
+    .book-demo-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        font-size: 0.9em;
+        font-weight: 600;
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #000000;
+        border: 2px solid #000000;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        margin-top: 1rem;
+    }
+
+    /* Hover: Match primary gradient style */
+    .book-demo-button:hover {
+        background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+        color: #000000;
+        border-color: #4a90e2;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    }
+
+    .book-demo-button svg {
+        transition: transform 0.3s ease;
+        width: 16px;
+        height: 16px;
+        stroke-width: 2;
+        stroke: currentColor;
+    }
+
+    .book-demo-button:active {
+        transform: translateY(1px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+
+    /* Zorg dat console-kop zichtbaar blijft onder vaste header bij anchor scroll */
+    #console {
+        scroll-margin-top: 120px;
+    }
+
+    @media (max-width: 1024px) {
+        #console {
+            scroll-margin-top: 96px;
+        }
+    }
+
+    /* Smooth scrolling for the whole page */
+    html { scroll-behavior: smooth; }
+
+    /* Slider Mechanics */
+    .slide-track {
+        display: flex;
+        transition: transform 0.4s ease-in-out;
+        width: 100%;
+    }
+    .slide-track.dragging {
+        transition: none !important;
+        cursor: grabbing;
+    }
+    .slide {
+        min-width: 100%;
+        flex-shrink: 0;
+    }
+    .slide img {
+        object-fit: cover;
+    }
+    @media (max-width: 768px) {
+        .slide img {
+            object-fit: contain;
+        }
+    }
+    /* Hide scrollbar for cleaner look */
+    .no-scrollbar::-webkit-scrollbar {
+        display: none;
+    }
+    .no-scrollbar {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+</style>
+    <div class="h-12"></div>
+
+    <section class="max-w-7xl mx-auto px-6 py-12">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6 text-slate-900">
+                    Optimalizeer uw organisatie met custom AI
+                    <!-- Klaar voor de toekomst met custom AI -->
+                </h1>
+                <p class="text-xl text-gray-600 mb-10 max-w-lg leading-relaxed">
+                    Stroomlijn uw bedrijfsprocessen en verlaag kosten met intelligente tools, ontwikkeld voor uw organisatie.
+                </p>
+
+                <div class="flex flex-col sm:flex-row gap-4 hero-buttons-wrapper">
+                    <a href="#console" class="discover-console-button">
+                        Ontdek de Console
+                    </a>
+
+                    <a href="/case-studies" class="look-case-studies-button">
+                        Bekijk Case Studies
+                    </a>
+                </div>
+            </div>
+
+            <div class="h-96 bg-white rounded-2xl flex items-center justify-center text-gray-400">
+                <canvas id="hero-animation-canvas" style="width: 100%; height: 100%; border-radius: 16px;"></canvas>
+            </div>
+    </div>
+</section>
+
+    <div class="h-24"></div>
+
+    <section class="max-w-5xl mx-auto px-6 py-12 text-center bg-slate-50 border-2 border-slate-900 rounded-3xl mb-24" id="fullstack-section-nl">
+        <h2 class="text-5xl font-bold mb-4 text-slate-900">Uw Externe AI Afdeling</h2>
+        <p class="text-lg text-slate-700 max-w-2xl mx-auto mb-6">
+            Versterk teams met intelligent agents, geautomatiseerde workflows en naadloze integraties voor meetbaar resultaat.
+        </p>
+
+        <!-- Button Row -->
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="/about" class="book-demo-button">
+                Lees Meer Over Onze Aanpak
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+            </a>
+
+        </div>
+    </section>
+
+<script>
+    // Initialize the hero animation when the page loads
+    if (typeof initHeroAnimation === 'function') {
+        setTimeout(() => {
+            initHeroAnimation();
+        }, 100); // Small delay to ensure DOM is ready
+    }
+
+    // Carousel functionality
+    function initCarousel() {
+        const track = document.getElementById('track');
+        const dotsNav = document.getElementById('dotsNav');
+        const dots = dotsNav.querySelectorAll('button');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const carouselContainer = document.querySelector('.group'); // The wrapper with group class
+
+        if (!track || !dotsNav || !carouselContainer) return;
+
+        let currentIndex = 0;
+        const totalSlides = 7;
+        let autoPlayInterval = null;
+        const autoPlayDelay = 5000; // 5 seconds
+
+        function updateTrack() {
+            track.style.transform = `translateX(-${currentIndex * 100}%)`;
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('bg-gray-400', index === currentIndex);
+                dot.classList.toggle('bg-gray-300', index !== currentIndex);
+            });
+        }
+
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateTrack();
+        }
+
+        function startAutoPlay() {
+            if (autoPlayInterval) clearInterval(autoPlayInterval);
+            autoPlayInterval = setInterval(nextSlide, autoPlayDelay);
+        }
+
+        function stopAutoPlay() {
+            if (autoPlayInterval) {
+                clearInterval(autoPlayInterval);
+                autoPlayInterval = null;
+            }
+        }
+
+        // Drag / swipe support (mouse + touch)
+        let isDragging = false;
+        let startX = 0;
+        let currentTranslate = 0;
+        let prevTranslate = 0;
+
+        const getSlideWidth = () => carouselContainer.getBoundingClientRect().width;
+        const getPositionX = (event) => event.touches ? event.touches[0].clientX : event.clientX;
+
+        function setSliderPosition(px) {
+            track.style.transform = `translateX(${px}px)`;
+        }
+
+        function handlePointerDown(event) {
+            isDragging = true;
+            startX = getPositionX(event);
+            stopAutoPlay();
+            track.classList.add('dragging');
+            track.style.transition = 'none';
+            prevTranslate = -currentIndex * getSlideWidth();
+        }
+
+        function handlePointerMove(event) {
+            if (!isDragging) return;
+            const currentX = getPositionX(event);
+            const delta = currentX - startX;
+            currentTranslate = prevTranslate + delta;
+            setSliderPosition(currentTranslate);
+        }
+
+        function handlePointerUp() {
+            if (!isDragging) return;
+            isDragging = false;
+            track.classList.remove('dragging');
+            track.style.transition = 'transform 0.3s ease';
+
+            const movedBy = currentTranslate - prevTranslate;
+            const threshold = getSlideWidth() * 0.15;
+
+            if (movedBy < -threshold) {
+                currentIndex = (currentIndex + 1) % totalSlides;
+            } else if (movedBy > threshold) {
+                currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            }
+
+            updateTrack();
+            startAutoPlay();
+        }
+
+        track.addEventListener('pointerdown', handlePointerDown);
+        window.addEventListener('pointermove', handlePointerMove);
+        window.addEventListener('pointerup', handlePointerUp);
+        window.addEventListener('pointercancel', handlePointerUp);
+        track.addEventListener('dragstart', (e) => e.preventDefault());
+
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                updateTrack();
+                stopAutoPlay();
+                startAutoPlay(); // Restart auto-play after interaction
+            });
+        });
+
+        prevBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex - 1 + totalSlides) % totalSlides;
+            updateTrack();
+            stopAutoPlay();
+            startAutoPlay(); // Restart auto-play after interaction
+        });
+
+        nextBtn.addEventListener('click', () => {
+            currentIndex = (currentIndex + 1) % totalSlides;
+            updateTrack();
+            stopAutoPlay();
+            startAutoPlay(); // Restart auto-play after interaction
+        });
+
+        // Pause on hover
+        carouselContainer.addEventListener('mouseenter', stopAutoPlay);
+        carouselContainer.addEventListener('mouseleave', startAutoPlay);
+
+        // Initialize
+        updateTrack();
+        startAutoPlay();
+    }
+
+    // Make it globally available
+    window.initCarousel = initCarousel;
+</script>
+
+    <div class="h-8"></div>
+
+    <section class="max-w-7xl mx-auto px-6 py-12 mb-24">
+        <div class="grid md:grid-cols-[35%_1fr] gap-12 lg:gap-20">
+
+            <div class="relative">
+                <div class="sticky top-32">
+                    <h2 class="text-4xl md:text-5xl font-medium leading-tight mb-6">
+                        Wat kunnen wij voor u doen?
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Transformeer uw bedrijf met AI-oplossingen die resultaat leveren.
+                    </p>
+                    <a href="/case-studies" class="discover-console-button">
+                        Bekijk Case Studies
+                    </a>
+                </div>
+            </div>
+
+            <div class="card-container grid grid-cols-1 md:grid-cols-2 gap-6">
+
+                <div class="group relative bg-gradient-to-br from-blue-50 via-white to-white border border-gray-200 rounded-xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 hover:border-blue-400 transition-all duration-300 cursor-default h-full flex flex-col overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-full blur-3xl opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+                    <div class="relative flex items-start gap-3 mb-3">
+                        <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors duration-300">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="card-title flex-1">Maatwerk AI Agents Bouwen</h4>
+                    </div>
+                    <p class="card-description relative">Automatiseer workflows en verbeter besluitvorming met aangepaste AI-agents en assistenten, ontworpen voor alles van klantenservice tot complexe data-analyse.</p>
+                </div>
+
+                <div class="group relative bg-gradient-to-br from-blue-50 via-white to-white border border-gray-200 rounded-xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 hover:border-blue-400 transition-all duration-300 cursor-default h-full flex flex-col overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-full blur-3xl opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+                    <div class="relative flex items-start gap-3 mb-3">
+                        <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors duration-300">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 12l3-3 3 3 4-4M8 21l4-4 4 4M3 4h18M4 4h16v12a1 1 0 01-1 1H5a1 1 0 01-1-1V4z"></path>
+                            </svg>
+                        </div>
+                        <h4 class="card-title flex-1">AI Strategie & Consultancy</h4>
+                    </div>
+                    <p class="card-description relative">Wij bouwen niet alleen; we adviseren. Ons team helpt u de beste kansen voor AI-implementatie te identificeren en zorgt ervoor dat uw investering echte bedrijfswaarde oplevert.</p>
+                </div>
+
+                <div class="group relative bg-gradient-to-br from-blue-50 via-white to-white border border-gray-200 rounded-xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 hover:border-blue-400 transition-all duration-300 cursor-default h-full flex flex-col overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-full blur-3xl opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+                    <div class="relative flex items-start gap-3 mb-3">
+                        <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors duration-300">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"></path>
+                            </svg>
+                        </div>
+                        <h4 class="card-title flex-1">Workflow Automatisering</h4>
+                    </div>
+                    <p class="card-description relative">Koppel uw verschillende softwaresystemen en elimineer repetitieve handmatige taken. We bouwen naadloze, zelflopende automatiseringen die uw bedrijfsprocessen stroomlijnen.</p>
+                </div>
+
+                <div class="group relative bg-gradient-to-br from-blue-50 via-white to-white border border-gray-200 rounded-xl p-8 shadow-lg hover:shadow-2xl hover:-translate-y-2 hover:border-blue-400 transition-all duration-300 cursor-default h-full flex flex-col overflow-hidden">
+                    <div class="absolute top-0 right-0 w-32 h-32 bg-blue-100 rounded-full blur-3xl opacity-0 group-hover:opacity-50 transition-opacity duration-300"></div>
+                    <div class="relative flex items-start gap-3 mb-3">
+                        <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center group-hover:bg-blue-200 transition-colors duration-300">
+                            <svg class="w-6 h-6 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2m-2-4h.01M17 16h.01"></path>
+                            </svg>
+                        </div>
+                        <h4 class="card-title flex-1">Maatwerk Kennisbanken (RAG)</h4>
+                    </div>
+                    <p class="card-description relative">Maak de data van uw bedrijf toegankelijk. We bouwen veilige systemen waarmee uw team direct interne documenten kan doorzoeken met natuurlijke taal.</p>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Studies Carousel -->
+    <section class="relative py-20 bg-white">
+        <div class="text-center mb-12 px-6">
+            <h2 class="text-5xl font-bold mb-4 text-slate-900">
+                Echte Succesverhalen
+            </h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                Zie hoe we bedrijven getransformeerd hebben met aangepaste AI-oplossingen
+            </p>
+        </div>
+
+        <!-- Full-width carousel container -->
+        <div class="case-studies-carousel-container w-full md:w-screen md:relative md:left-1/2 md:right-1/2 md:-mx-[50vw] overflow-hidden cursor-grab active:cursor-grabbing">
+            <div class="case-studies-carousel-padding-wrapper">
+                <div class="case-studies-carousel-track flex transition-transform duration-300 ease-out" id="home-case-studies-track">
+
+                    <!-- Case Study Card 1 -->
+                    <div class="case-study-card flex-shrink-0" data-card-index="0">
+                        <div class="relative bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-blue-300 transition-all duration-300 overflow-hidden p-6 h-full flex flex-col justify-between">
+                            <div>
+                                <span class="px-3 py-1 bg-blue-50 border border-blue-200 text-blue-700 rounded-lg text-xs font-bold uppercase tracking-wider inline-block mb-4">
+                                    24/7 Support Agent
+                                </span>
+                                <h3 class="text-3xl font-bold text-slate-900 mb-2">
+                                    Intelligente klantenservice
+                                </h3>
+                            </div>
+                            <a href="/case-studies#case1" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-200 mt-4">
+                                Leer meer
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Case Study Card 2 -->
+                    <div class="case-study-card flex-shrink-0" data-card-index="1">
+                        <div class="relative bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-blue-300 transition-all duration-300 overflow-hidden p-6 h-full flex flex-col justify-between">
+                            <div>
+                                <span class="px-3 py-1 bg-blue-50 border border-blue-200 text-blue-700 rounded-lg text-xs font-bold uppercase tracking-wider inline-block mb-4">
+                                    Geautomatiseerde controle
+                                </span>
+                                <h3 class="text-3xl font-bold text-slate-900 mb-2">
+                                    Slimme factuurverwerking
+                                </h3>
+                            </div>
+                            <a href="/case-studies#case2" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-200 mt-4">
+                                Leer meer
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Case Study Card 3 -->
+                    <div class="case-study-card flex-shrink-0" data-card-index="2">
+                        <div class="relative bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-blue-300 transition-all duration-300 overflow-hidden p-6 h-full flex flex-col justify-between">
+                            <div>
+                                <span class="px-3 py-1 bg-blue-50 border border-blue-200 text-blue-700 rounded-lg text-xs font-bold uppercase tracking-wider inline-block mb-4">
+                                    Enterprise RAG
+                                </span>
+                                <h3 class="text-3xl font-bold text-slate-900 mb-2">
+                                    Technische kennishub
+                                </h3>
+                            </div>
+                            <a href="/case-studies#case3" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-200 mt-4">
+                                Leer meer
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Case Study Card 4 -->
+                    <div class="case-study-card flex-shrink-0" data-card-index="3">
+                        <div class="relative bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-blue-300 transition-all duration-300 overflow-hidden p-6 h-full flex flex-col justify-between">
+                            <div>
+                                <span class="px-3 py-1 bg-blue-50 border border-blue-200 text-blue-700 rounded-lg text-xs font-bold uppercase tracking-wider inline-block mb-4">
+                                    Leadkwalificatie
+                                </span>
+                                <h3 class="text-3xl font-bold text-slate-900 mb-2">
+                                    Sales intelligence agent
+                                </h3>
+                            </div>
+                            <a href="/case-studies#case4" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-200 mt-4">
+                                Leer meer
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                    <!-- Case Study Card 5 -->
+                    <div class="case-study-card flex-shrink-0" data-card-index="4">
+                        <div class="relative bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md hover:border-blue-300 transition-all duration-300 overflow-hidden p-6 h-full flex flex-col justify-between">
+                            <div>
+                                <span class="px-3 py-1 bg-blue-50 border border-blue-200 text-blue-700 rounded-lg text-xs font-bold uppercase tracking-wider inline-block mb-4">
+                                    Real-time analytics
+                                </span>
+                                <h3 class="text-3xl font-bold text-slate-900 mb-2">
+                                    Data-analytics dashboard
+                                </h3>
+                            </div>
+                            <a href="/case-studies#case5" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold transition-colors duration-200 mt-4">
+                                Leer meer
+                                <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="console" class="max-w-7xl mx-auto px-6 py-20 scroll-mt-30">
+        <div class="grid md:grid-cols-[35%_1fr] gap-12 lg:gap-20 items-start">
+            <!-- Left Column: Text Content -->
+            <div>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">Uw Privé AI Console</h2>
+                <p class="text-lg text-gray-600 mb-8">
+                    Krijg toegang tot uw AI-tools via onze beveiligde omgeving, waar alle data wordt opgeslagen met volledige zeggenschap op Europese servers voor maximale privacy en compliance.
+                </p>
+                <div class="flex flex-col gap-4 items-start">
+                    <a href="/console" class="discover-console-button">Leer over de Console</a>
+                    <a href="/console-experience" class="look-case-studies-button">Ervaar de Console</a>
+                </div>
+            </div>
+
+            <!-- Right Column: Carousel -->
+            <div class="relative w-full group">
+
+            <div class="overflow-hidden rounded-3xl border border-brand-blue shadow-2xl bg-white aspect-video relative">
+                <div class="slide-track h-full" id="track">
+                    <div class="slide bg-gray-100 flex items-center justify-center">
+                        <img src="slides/homepage.png" alt="Console home" class="w-full h-full object-cover">
+                    </div>
+                    <div class="slide bg-gray-100 flex items-center justify-center">
+                        <img src="slides/aitools.png" alt="AI tools" class="w-full h-full object-cover">
+                    </div>
+                    <div class="slide bg-gray-100 flex items-center justify-center">
+                        <img src="slides/systemoverview.png" alt="System overview" class="w-full h-full object-cover">
+                    </div>
+                    <div class="slide bg-gray-100 flex items-center justify-center">
+                        <img src="slides/clientsupport.png" alt="Client support" class="w-full h-full object-cover">
+                    </div>
+                    <div class="slide bg-gray-100 flex items-center justify-center">
+                        <img src="slides/fileinputagent.png" alt="File input agent" class="w-full h-full object-cover">
+                    </div>
+                    <div class="slide bg-gray-100 flex items-center justify-center">
+                        <img src="slides/RAG_knowledge.png" alt="RAG knowledge" class="w-full h-full object-cover">
+                    </div>
+                    <div class="slide bg-gray-100 flex items-center justify-center">
+                        <img src="slides/darkmode.png" alt="Dark mode" class="w-full h-full object-cover">
+                    </div>
+                </div>
+            </div>
+
+            <button id="prevBtn" class="absolute left-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <button id="nextBtn" class="absolute right-4 top-1/2 -translate-y-1/2 bg-black/50 hover:bg-black text-white p-3 rounded-full opacity-0 group-hover:opacity-100 transition-all duration-300">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+
+                <div class="flex justify-center gap-3 mt-8" id="dotsNav">
+                    <button class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300 hover:bg-gray-400" data-index="0"></button>
+                    <button class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300 hover:bg-gray-400" data-index="1"></button>
+                    <button class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300 hover:bg-gray-400" data-index="2"></button>
+                    <button class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300 hover:bg-gray-400" data-index="3"></button>
+                    <button class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300 hover:bg-gray-400" data-index="4"></button>
+                    <button class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300 hover:bg-gray-400" data-index="5"></button>
+                    <button class="w-3 h-3 rounded-full bg-gray-300 transition-all duration-300 hover:bg-gray-400" data-index="6"></button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-t border-gray-200 max-w-7xl mx-auto">
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="space-y-6">
+                <h2 class="text-5xl md:text-6xl font-medium text-slate-900 leading-tight">
+                    Maak uw bedrijf toekomst<wbr>bestendig<br>
+                    <span class="text-5xl md:text-6xl font-bold">start uw reis hier</span>
+                </h2>
+                <div class="pt-4">
+                    <a href="/contact" class="book-demo-button">
+                        <span>Boek een Demo</span>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<style>
+/* ===== CASE STUDIES CAROUSEL (HOMEPAGE) ===== */
+.case-studies-carousel-container {
+    user-select: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    touch-action: pan-y pinch-zoom;
+}
+
+.case-studies-carousel-padding-wrapper {
+    padding-left: max(1.5rem, calc((100vw - 80rem) / 2 + 1.5rem));
+    padding-right: max(1.5rem, calc((100vw - 80rem) / 2 + 1.5rem));
+}
+
+.case-studies-carousel-track {
+    will-change: transform;
+    gap: 1.5rem;
+}
+
+.case-studies-carousel-track.dragging {
+    transition: none !important;
+}
+
+.case-study-card {
+    width: 320px;
+    height: 200px;
+}
+
+@media (max-width: 768px) {
+    .case-study-card {
+        width: 82vw;
+        height: auto;
+        min-height: 220px;
+    }
+
+    .case-studies-carousel-padding-wrapper {
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+
+    .case-studies-carousel-track {
+        gap: 0.75rem;
+    }
+}
+
+@media (min-width: 769px) and (max-width: 1024px) {
+    .case-study-card {
+        width: 300px;
+    }
+}
+
+@media (min-width: 1440px) {
+    .case-study-card {
+        width: 350px;
+    }
+}
+
+.case-study-card img {
+    pointer-events: none;
+}
+
+.case-studies-carousel-container.dragging .case-study-card {
+    cursor: grabbing;
+}
+</style>
+
+<script>
+// ===== HOME CASE STUDIES CAROUSEL - DRAG HANDLER =====
+function initHomeCaseStudiesCarousel() {
+    const container = document.querySelector('.case-studies-carousel-container');
+    const track = document.getElementById('home-case-studies-track');
+
+    if (!container || !track) return;
+
+    const cards = track.querySelectorAll('.case-study-card');
+    const cardCount = cards.length;
+
+    if (cardCount <= 1) {
+        container.style.cursor = 'default';
+        return;
+    }
+
+    let isDragging = false;
+    let hasMoved = false;
+    let startX = 0;
+    let previousTranslate = 0;
+    let currentTranslate = 0;
+    let animationID = null;
+    let velocityX = 0;
+    let lastX = 0;
+    let lastTime = Date.now();
+    let baseTranslate = 0;
+
+    function getCardWidth() {
+        return cards[0] ? cards[0].offsetWidth : 320;
+    }
+
+    function getGap() {
+        const style = window.getComputedStyle(track);
+        return parseFloat(style.gap) || 24;
+    }
+
+    function getBoundaries() {
+        const cardWidth = getCardWidth();
+        const gap = getGap();
+        const trackWidth = (cardWidth + gap) * cardCount - gap; // Remove last gap
+        const containerWidth = container.offsetWidth;
+        const paddingLeft = parseFloat(window.getComputedStyle(track.parentElement).paddingLeft) || 0;
+        const paddingRight = parseFloat(window.getComputedStyle(track.parentElement).paddingRight) || 0;
+
+        return {
+            min: Math.min(0, -(trackWidth - containerWidth + paddingLeft + paddingRight)),
+            max: 0
+        };
+    }
+
+    function pointerDown(e) {
+        isDragging = true;
+        hasMoved = false;
+        startX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+        lastX = startX;
+        lastTime = Date.now();
+        velocityX = 0;
+        baseTranslate = previousTranslate;
+
+        if (animationID) {
+            cancelAnimationFrame(animationID);
+            animationID = null;
+        }
+    }
+
+    function pointerMove(e) {
+        if (!isDragging) return;
+
+        const currentPosition = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+        const deltaX = currentPosition - startX;
+
+        if (!hasMoved && Math.abs(deltaX) > 6) {
+            hasMoved = true;
+            container.classList.add('dragging');
+            track.classList.add('dragging');
+        }
+
+        if (!hasMoved) return;
+
+        if (e.type.includes('touch')) {
+            e.preventDefault();
+        }
+
+        const now = Date.now();
+        const deltaTime = now - lastTime;
+
+        if (deltaTime > 0) {
+            velocityX = (currentPosition - lastX) / deltaTime;
+        }
+
+        lastX = currentPosition;
+        lastTime = now;
+
+        currentTranslate = baseTranslate + deltaX;
+
+        const boundaries = getBoundaries();
+        if (currentTranslate > boundaries.max) {
+            currentTranslate = boundaries.max + (currentTranslate - boundaries.max) * 0.3;
+        } else if (currentTranslate < boundaries.min) {
+            currentTranslate = boundaries.min + (currentTranslate - boundaries.min) * 0.3;
+        }
+
+        track.style.transform = `translateX(${currentTranslate}px)`;
+    }
+
+    function pointerUp() {
+        if (!isDragging) return;
+
+        isDragging = false;
+
+        if (!hasMoved) {
+            container.classList.remove('dragging');
+            track.classList.remove('dragging');
+            return;
+        }
+
+        container.classList.remove('dragging');
+        track.classList.remove('dragging');
+
+        const boundaries = getBoundaries();
+        const momentumThreshold = 0.5;
+
+        if (Math.abs(velocityX) > momentumThreshold) {
+            applyMomentum(velocityX, boundaries);
+        } else {
+            snapToNearestCard(boundaries);
+        }
+    }
+
+    function applyMomentum(velocity, boundaries) {
+        const friction = 0.95;
+        const threshold = 0.05;
+
+        function momentumStep() {
+            velocity *= friction;
+            currentTranslate += velocity * 16;
+
+            if (currentTranslate > boundaries.max) {
+                currentTranslate = boundaries.max;
+                velocity = 0;
+            } else if (currentTranslate < boundaries.min) {
+                currentTranslate = boundaries.min;
+                velocity = 0;
+            }
+
+            track.style.transform = `translateX(${currentTranslate}px)`;
+
+            if (Math.abs(velocity) > threshold) {
+                animationID = requestAnimationFrame(momentumStep);
+            } else {
+                snapToNearestCard(boundaries);
+            }
+        }
+
+        animationID = requestAnimationFrame(momentumStep);
+    }
+
+    function snapToNearestCard(boundaries) {
+        const cardWidth = getCardWidth();
+        const gap = getGap();
+        const cardStep = cardWidth + gap;
+
+        const nearestIndex = Math.round(-currentTranslate / cardStep);
+        const targetTranslate = -nearestIndex * cardStep;
+
+        const clampedTranslate = Math.max(boundaries.min, Math.min(boundaries.max, targetTranslate));
+
+        track.classList.remove('dragging');
+        track.style.transform = `translateX(${clampedTranslate}px)`;
+
+        previousTranslate = clampedTranslate;
+        currentTranslate = clampedTranslate;
+    }
+
+    container.addEventListener('mousedown', pointerDown);
+    document.addEventListener('mousemove', pointerMove);
+    document.addEventListener('mouseup', pointerUp);
+
+    container.addEventListener('touchstart', pointerDown, { passive: false });
+    document.addEventListener('touchmove', pointerMove, { passive: false });
+    document.addEventListener('touchend', pointerUp);
+
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(() => {
+            const boundaries = getBoundaries();
+            snapToNearestCard(boundaries);
+        }, 150);
+    });
+
+    container.addEventListener('contextmenu', (e) => {
+        if (isDragging) e.preventDefault();
+    });
+
+    track.style.transform = 'translateX(0px)';
+    previousTranslate = 0;
+    currentTranslate = 0;
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initHomeCaseStudiesCarousel);
+} else {
+    initHomeCaseStudiesCarousel();
+}
+
+window.initHomeCaseStudiesCarousel = initHomeCaseStudiesCarousel;
+</script>
