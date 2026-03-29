@@ -119,7 +119,7 @@
             // Add welcome message only once
             if (!welcomeMessageAdded) {
                 setTimeout(() => {
-                    addMessage('Hello! I\'m here to help. How can I assist you with smartflux AI solutions today?', false);
+                    addMessage('Hello! I\'m here to help. How can I assist you with smartflux sites today?', false);
                     welcomeMessageAdded = true;
                     chatMessages.scrollTop = chatMessages.scrollHeight;
                 }, 600);
@@ -283,6 +283,12 @@
             });
         }
     }
+
+    // Expose openChat globally so other elements can trigger it
+    window.openSmartfluxChat = function() {
+        const headerDiv = document.querySelector('#compact-view > div');
+        if (headerDiv) headerDiv.click();
+    };
 
     // Initialize when DOM is ready
     if (document.readyState === 'loading') {
