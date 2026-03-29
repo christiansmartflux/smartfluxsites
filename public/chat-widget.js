@@ -15,8 +15,7 @@
                     <div id="compact-view" class="transition-all duration-300 ease-in-out" style="height: 64px; flex-shrink: 0;">
                         <div class="px-6 py-4 cursor-pointer hover:bg-gray-900 transition-colors duration-200 border-b-2 border-gray-800" style="height: 64px; display: flex; align-items: center; justify-content: space-between;">
                             <div class="flex items-center gap-3">
-                                <img src="/slides/favicon.png" alt="smartflux" width="40" height="40" style="flex-shrink: 0;">
-                                <span class="font-bold text-base">Chat with a smartflux AI agent</span>
+                                <span class="font-bold text-base">Chat with a smartflux.sites AI agent</span>
                             </div>
                             <!-- Arrow/Close button -->
                             <div id="toggle-button" class="text-gray-400 hover:text-white text-2xl font-bold w-8 h-8 flex items-center justify-center rounded hover:bg-gray-800 transition-all leading-none">
@@ -40,9 +39,9 @@
                         <div class="p-4 border-t-2 border-gray-800 flex-shrink-0" style="background-color: #000;">
                             <div class="flex gap-2">
                                 <input type="text" id="chat-input" placeholder="Type your message..." 
-                                    class="flex-1 bg-gray-900 border-2 border-gray-800 rounded-lg px-3 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 text-sm">
-                                <button id="send-btn" 
-                                    class="bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-lg transition-colors font-semibold text-sm whitespace-nowrap flex-shrink-0">
+                                    class="flex-1 bg-gray-900 border-2 border-gray-800 rounded-lg px-3 py-2 text-white placeholder-gray-400 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:border-indigo-500 text-sm">
+                                <button id="send-btn"
+                                    class="bg-indigo-600 hover:bg-indigo-700 text-white px-4 py-2 rounded-lg transition-colors font-semibold text-sm whitespace-nowrap flex-shrink-0">
                                     Send
                                 </button>
                             </div>

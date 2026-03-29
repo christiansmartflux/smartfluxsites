@@ -8,10 +8,11 @@
             nav_case_studies: 'Case Studies',
             nav_about: 'About Us',
             nav_contact: 'Contact',
-            nav_console: 'Console',
-            nav_console_cta: 'Open the Console',
-            nav_console_learn: 'Learn about the Console',
-            nav_console_experience: 'Experience the Console',
+            nav_services: 'Services',
+            nav_services_main: 'Our Services',
+            nav_werkwijze: 'How We Work',
+            nav_portfolio: 'Portfolio',
+            nav_console_cta: 'Get in touch',
 
             // Footer
             footer_quick_links: 'Quick Links',
@@ -36,10 +37,11 @@
             nav_case_studies: 'Case Studies',
             nav_about: 'Over Ons',
             nav_contact: 'Contact',
-            nav_console: 'Console',
-            nav_console_cta: 'Open de Console',
-            nav_console_learn: 'Leer over de Console',
-            nav_console_experience: 'Ervaar de Console',
+            nav_services: 'Diensten',
+            nav_services_main: 'Onze Diensten',
+            nav_werkwijze: 'Werkwijze',
+            nav_portfolio: 'Portfolio',
+            nav_console_cta: 'Neem contact op',
 
             // Footer
             footer_quick_links: 'Snelle Links',
@@ -139,9 +141,9 @@
             '/': currentLang === 'nl' ? 'content/home-nl.html' : 'content/home.html',
             '/about': currentLang === 'nl' ? 'content/about-nl.html' : 'content/about.html',
             '/case-studies': currentLang === 'nl' ? 'content/case-studies-nl.html' : 'content/case-studies.html',
-            '/console': currentLang === 'nl' ? 'content/console-nl.html' : 'content/console.html',
-            '/console-experience': currentLang === 'nl' ? 'content/console-experience-nl.html' : 'content/console-experience.html',
-            '/console-experience-beta': 'content/console-experience-beta.html',
+            '/services': currentLang === 'nl' ? 'content/services-nl.html' : 'content/services.html',
+            '/werkwijze': currentLang === 'nl' ? 'content/werkwijze-nl.html' : 'content/werkwijze.html',
+            '/portfolio': currentLang === 'nl' ? 'content/portfolio-nl.html' : 'content/portfolio.html',
             '/contact': currentLang === 'nl' ? 'content/contact-nl.html' : 'content/contact.html'
         };
 

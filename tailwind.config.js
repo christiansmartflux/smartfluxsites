@@ -3,7 +3,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: { sans: ["Inter", "sans-serif"] },
-      colors: { brand: { blue: "#4A90E2", dark: "#0f172a" } }
+      colors: { brand: { blue: "#6366f1", dark: "#0f172a" } }
     }
   },
   plugins: []
