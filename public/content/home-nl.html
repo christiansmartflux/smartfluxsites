@@ -415,27 +415,238 @@
             </p>
         </div>
 
-        <div class="max-w-7xl mx-auto px-6">
-            <div class="bg-gradient-to-br from-gray-50 to-white rounded-2xl border border-gray-200 shadow-sm hover:shadow-lg transition-all duration-300 overflow-hidden p-8 flex flex-col md:flex-row gap-8 items-center">
-                <div class="flex-1 space-y-4">
-                    <span class="px-3 py-1 bg-indigo-50 border border-indigo-200 text-indigo-700 rounded-lg text-xs font-bold uppercase tracking-wider inline-block">
-                        Bedrijfswebsite
-                    </span>
-                    <h3 class="text-3xl font-bold text-slate-900">The Skin Health Society</h3>
-                    <p class="text-gray-600">Een strakke, professionele website voor een huidgezondheidsplatform. Gericht op vertrouwen, leesbaarheid en een sterke eerste indruk.</p>
-                    <a href="https://theskinhealthsociety.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-semibold transition-colors duration-200 mt-2">
-                        Bekijk de site
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
-                        </svg>
-                    </a>
-                </div>
-                <div class="flex-1 bg-slate-100 rounded-xl h-48 flex items-center justify-center text-gray-400 text-sm">
-                    <span>theskinhealthsociety.com</span>
+        <!-- Full-width carousel container -->
+        <div class="nl-showcase-carousel-container w-full md:w-screen md:relative md:left-1/2 md:right-1/2 md:-mx-[50vw] overflow-hidden cursor-grab active:cursor-grabbing">
+            <div class="nl-showcase-padding-wrapper">
+                <div class="nl-showcase-track flex transition-transform duration-300 ease-out" id="nl-showcase-track">
+
+                    <!-- The Skin Health Society -->
+                    <div class="nl-showcase-card flex-shrink-0" data-card-index="0">
+                        <div class="relative bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden p-6 h-full flex flex-row gap-6 items-center">
+                            <div class="flex-1 space-y-3">
+                                <span class="px-2 py-0.5 bg-indigo-50 border border-indigo-200 text-indigo-700 rounded-lg text-xs font-bold uppercase tracking-wider inline-block">
+                                    Bedrijfswebsite
+                                </span>
+                                <h3 class="text-2xl font-bold text-slate-900">The Skin Health Society</h3>
+                                <p class="text-gray-600 text-sm">Een strakke, professionele website voor een huidgezondheidsplatform. Gericht op vertrouwen, leesbaarheid en een sterke eerste indruk.</p>
+                                <a href="https://theskinhealthsociety.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-semibold text-sm transition-colors duration-200 mt-1">
+                                    Bekijk de site
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="nl-showcase-image-wrap flex-shrink-0">
+                                <img src="/slides/SHS.png" alt="The Skin Health Society" class="w-full h-full object-contain">
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Smartflux AI -->
+                    <div class="nl-showcase-card flex-shrink-0" data-card-index="1">
+                        <div class="relative bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden p-6 h-full flex flex-row gap-6 items-center">
+                            <div class="flex-1 space-y-3">
+                                <span class="px-2 py-0.5 bg-indigo-50 border border-indigo-200 text-indigo-700 rounded-lg text-xs font-bold uppercase tracking-wider inline-block">
+                                    AI Platform
+                                </span>
+                                <h3 class="text-2xl font-bold text-slate-900">Smartflux AI</h3>
+                                <p class="text-gray-600 text-sm">Een modern AI-platform voor bedrijven. Intelligente chatbots, documentanalyse en maatwerk AI-oplossingen onder één dak.</p>
+                                <a href="https://smartflux.ai" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-semibold text-sm transition-colors duration-200 mt-1">
+                                    Bekijk de site
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="nl-showcase-image-wrap flex-shrink-0 bg-slate-100 rounded-xl flex items-center justify-center text-gray-400 text-sm">
+                                smartflux.ai
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Smartflux Console -->
+                    <div class="nl-showcase-card flex-shrink-0" data-card-index="2">
+                        <div class="relative bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden p-6 h-full flex flex-row gap-6 items-center">
+                            <div class="flex-1 space-y-3">
+                                <span class="px-2 py-0.5 bg-indigo-50 border border-indigo-200 text-indigo-700 rounded-lg text-xs font-bold uppercase tracking-wider inline-block">
+                                    AI Console
+                                </span>
+                                <h3 class="text-2xl font-bold text-slate-900">Smartflux Console</h3>
+                                <p class="text-gray-600 text-sm">Het persoonlijke dashboard waar klanten toegang krijgen tot hun AI-tools. Veilig, overzichtelijk en altijd beschikbaar.</p>
+                                <a href="https://console.smartflux.ai" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-indigo-600 hover:text-indigo-700 font-semibold text-sm transition-colors duration-200 mt-1">
+                                    Bekijk de console
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>
+                                    </svg>
+                                </a>
+                            </div>
+                            <div class="nl-showcase-image-wrap flex-shrink-0 bg-slate-100 rounded-xl flex items-center justify-center text-gray-400 text-sm">
+                                console.smartflux.ai
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
         </div>
+
+        <!-- Carousel navigation arrows -->
+        <div class="flex items-center justify-center gap-4 mt-6">
+            <button id="nl-showcase-prev" class="w-10 h-10 rounded-full border border-gray-200 bg-white shadow-sm flex items-center justify-center text-gray-400 hover:text-indigo-600 hover:border-indigo-300 transition-all duration-200" aria-label="Vorige">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path>
+                </svg>
+            </button>
+            <button id="nl-showcase-next" class="w-10 h-10 rounded-full border border-gray-200 bg-white shadow-sm flex items-center justify-center text-gray-400 hover:text-indigo-600 hover:border-indigo-300 transition-all duration-200" aria-label="Volgende">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path>
+                </svg>
+            </button>
+        </div>
     </section>
+
+<style>
+.nl-showcase-carousel-container {
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: pan-y pinch-zoom;
+}
+.nl-showcase-padding-wrapper {
+    padding-left: max(1.5rem, calc((100vw - 80rem) / 2 + 1.5rem));
+    padding-right: max(1.5rem, calc((100vw - 80rem) / 2 + 1.5rem));
+}
+.nl-showcase-track {
+    will-change: transform;
+    gap: 1.5rem;
+}
+.nl-showcase-track.dragging {
+    transition: none !important;
+}
+.nl-showcase-card {
+    width: 600px;
+    height: 220px;
+}
+.nl-showcase-image-wrap {
+    width: 240px;
+    height: 150px;
+    aspect-ratio: 16/10;
+}
+.nl-showcase-carousel-container.dragging .nl-showcase-card {
+    cursor: grabbing;
+}
+@media (max-width: 768px) {
+    .nl-showcase-card {
+        width: 82vw;
+        height: auto;
+        min-height: 220px;
+        flex-direction: column;
+    }
+    .nl-showcase-image-wrap {
+        width: 100%;
+        height: 140px;
+    }
+    .nl-showcase-padding-wrapper {
+        padding-left: 5vw;
+        padding-right: 5vw;
+    }
+    .nl-showcase-track {
+        gap: 0.75rem;
+    }
+}
+</style>
+
+<script>
+function initNlShowcaseCarousel() {
+    const container = document.querySelector('.nl-showcase-carousel-container');
+    const track = document.getElementById('nl-showcase-track');
+    if (!container || !track) return;
+    const cards = track.querySelectorAll('.nl-showcase-card');
+    if (cards.length <= 1) { container.style.cursor = 'default'; return; }
+    let isDragging = false, hasMoved = false, startX = 0, previousTranslate = 0, currentTranslate = 0, animationID = null, velocityX = 0, lastX = 0, lastTime = Date.now(), baseTranslate = 0;
+    const getCardWidth = () => cards[0] ? cards[0].offsetWidth : 600;
+    const getGap = () => parseFloat(window.getComputedStyle(track).gap) || 24;
+    function getBoundaries() {
+        const cw = getCardWidth(), gap = getGap(), trackWidth = (cw + gap) * cards.length - gap;
+        const pl = parseFloat(window.getComputedStyle(track.parentElement).paddingLeft) || 0;
+        const pr = parseFloat(window.getComputedStyle(track.parentElement).paddingRight) || 0;
+        return { min: Math.min(0, -(trackWidth - container.offsetWidth + pl + pr)), max: 0 };
+    }
+    function pointerDown(e) {
+        isDragging = true; hasMoved = false;
+        startX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+        lastX = startX; lastTime = Date.now(); velocityX = 0; baseTranslate = previousTranslate;
+        if (animationID) { cancelAnimationFrame(animationID); animationID = null; }
+    }
+    function pointerMove(e) {
+        if (!isDragging) return;
+        const cur = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+        const delta = cur - startX;
+        if (!hasMoved && Math.abs(delta) > 6) { hasMoved = true; container.classList.add('dragging'); track.classList.add('dragging'); }
+        if (!hasMoved) return;
+        if (e.type.includes('touch')) e.preventDefault();
+        const now = Date.now(), dt = now - lastTime;
+        if (dt > 0) velocityX = (cur - lastX) / dt;
+        lastX = cur; lastTime = now;
+        currentTranslate = baseTranslate + delta;
+        const b = getBoundaries();
+        if (currentTranslate > b.max) currentTranslate = b.max + (currentTranslate - b.max) * 0.3;
+        else if (currentTranslate < b.min) currentTranslate = b.min + (currentTranslate - b.min) * 0.3;
+        track.style.transform = `translateX(${currentTranslate}px)`;
+    }
+    function snapToNearest(b) {
+        const step = getCardWidth() + getGap();
+        const idx = Math.round(-currentTranslate / step);
+        const target = Math.max(b.min, Math.min(b.max, -idx * step));
+        track.classList.remove('dragging');
+        track.style.transform = `translateX(${target}px)`;
+        previousTranslate = currentTranslate = target;
+    }
+    function pointerUp() {
+        if (!isDragging) return;
+        isDragging = false;
+        container.classList.remove('dragging'); track.classList.remove('dragging');
+        if (!hasMoved) return;
+        const b = getBoundaries();
+        if (Math.abs(velocityX) > 0.5) {
+            const friction = 0.95;
+            (function momentum() {
+                velocityX *= friction; currentTranslate += velocityX * 16;
+                if (currentTranslate > b.max) { currentTranslate = b.max; velocityX = 0; }
+                else if (currentTranslate < b.min) { currentTranslate = b.min; velocityX = 0; }
+                track.style.transform = `translateX(${currentTranslate}px)`;
+                if (Math.abs(velocityX) > 0.05) animationID = requestAnimationFrame(momentum);
+                else snapToNearest(b);
+            })();
+        } else { snapToNearest(b); }
+    }
+    container.addEventListener('mousedown', pointerDown);
+    document.addEventListener('mousemove', pointerMove);
+    document.addEventListener('mouseup', pointerUp);
+    container.addEventListener('touchstart', pointerDown, { passive: false });
+    document.addEventListener('touchmove', pointerMove, { passive: false });
+    document.addEventListener('touchend', pointerUp);
+    let resizeTimeout;
+    window.addEventListener('resize', () => { clearTimeout(resizeTimeout); resizeTimeout = setTimeout(() => snapToNearest(getBoundaries()), 150); });
+    track.style.transform = 'translateX(0px)'; previousTranslate = 0; currentTranslate = 0;
+
+    let currentIndex = 0;
+    function goTo(index) {
+        const b = getBoundaries();
+        const step = getCardWidth() + getGap();
+        const target = Math.max(b.min, Math.min(b.max, -index * step));
+        track.classList.remove('dragging');
+        track.style.transition = 'transform 300ms ease-out';
+        track.style.transform = `translateX(${target}px)`;
+        previousTranslate = currentTranslate = target;
+        currentIndex = index;
+    }
+    document.getElementById('nl-showcase-prev')?.addEventListener('click', () => goTo(Math.max(0, currentIndex - 1)));
+    document.getElementById('nl-showcase-next')?.addEventListener('click', () => goTo(Math.min(cards.length - 1, currentIndex + 1)));
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initNlShowcaseCarousel);
+else initNlShowcaseCarousel();
+window.initNlShowcaseCarousel = initNlShowcaseCarousel;
+</script>
 
     <!-- AI section -->
     <section class="max-w-7xl mx-auto px-6 py-20">
