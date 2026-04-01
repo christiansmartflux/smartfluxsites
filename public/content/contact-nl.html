@@ -1,5 +1,8 @@
 <!-- Contact Page Content - Dutch -->
 <style>
+    #contact-send-btn {
+        cursor: pointer;
+    }
     #contact-send-btn:disabled,
     #contact-send-btn.loading {
         background-color: #666666;
@@ -17,167 +20,136 @@
         transform: translateY(1px);
         box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
     }
-    .contact-input {
-        width: 100%;
-        padding: 10px 14px;
-        border: 1.5px solid #e5e7eb;
-        border-radius: 10px;
-        font-size: 0.95em;
-        color: #1e293b;
-        background: #fff;
-        transition: border-color 0.2s, box-shadow 0.2s;
-        outline: none;
-    }
-    .contact-input:focus {
-        border-color: #059669;
-        box-shadow: 0 0 0 3px rgba(5, 150, 105, 0.1);
-    }
-    .contact-label {
-        display: block;
-        font-size: 0.875rem;
-        font-weight: 500;
-        color: #374151;
-        margin-bottom: 6px;
-    }
 </style>
 
 <main class="flex-grow">
-
-    <!-- Hero -->
-    <section class="py-16 -mt-px" style="background-color: #ecfdf5;">
-        <div class="max-w-6xl mx-auto px-6">
-            <p class="uppercase text-sm tracking-[0.2em] text-emerald-600 mb-4">Contact</p>
-            <h1 class="text-5xl md:text-6xl font-bold leading-tight text-slate-900">Laten we kennismaken</h1>
-            <p class="text-xl text-gray-600 mt-6 max-w-2xl">Vertel ons wat u nodig heeft — wij sturen u binnen één werkdag een vrijblijvende offerte.</p>
-        </div>
-    </section>
-
-    <!-- Form + Info -->
-    <section class="max-w-6xl mx-auto px-6 py-16">
-        <div class="grid md:grid-cols-2 gap-10 items-start">
+    <div class="max-w-7xl mx-auto px-6 pt-6 pb-16">
+        <div class="grid md:grid-cols-2 gap-6">
 
             <!-- Contact Form -->
-            <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-8 space-y-6">
+            <div class="bg-white rounded-lg shadow border border-gray-200">
+                <div class="p-6 space-y-6">
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div>
-                        <label class="contact-label">Uw naam <span class="text-red-500">*</span></label>
-                        <input type="text" name="name" required class="contact-input" placeholder="Jan Jansen">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Uw naam <span class="text-red-500">*</span></label>
+                            <input type="text" name="name" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent" placeholder="Jan Jansen">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Bedrijfsnaam</label>
+                            <input type="text" name="company" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent" placeholder="Uw bedrijf BV">
+                        </div>
                     </div>
-                    <div>
-                        <label class="contact-label">Bedrijfsnaam</label>
-                        <input type="text" name="company" class="contact-input" placeholder="Uw bedrijf BV">
-                    </div>
-                </div>
 
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
-                    <div>
-                        <label class="contact-label">E-mailadres <span class="text-red-500">*</span></label>
-                        <input type="email" name="email" required class="contact-input" placeholder="jan@bedrijf.nl">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">E-mailadres <span class="text-red-500">*</span></label>
+                            <input type="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent" placeholder="jan@bedrijf.nl">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Telefoonnummer</label>
+                            <input type="tel" name="phone" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent" placeholder="+31 6 12 34 56 78">
+                        </div>
                     </div>
-                    <div>
-                        <label class="contact-label">Telefoonnummer</label>
-                        <input type="tel" name="phone" class="contact-input" placeholder="+31 6 12 34 56 78">
-                    </div>
-                </div>
 
-                <div>
-                    <label class="contact-label">Wat heeft u nodig? <span class="text-red-500">*</span></label>
-                    <select name="interest" required class="contact-input">
-                        <option value="">Selecteer een optie</option>
-                        <option value="bedrijfswebsite">Een nieuwe bedrijfswebsite</option>
-                        <option value="webapplicatie">Een webapplicatie of klantportaal</option>
-                        <option value="landingspagina">Een landingspagina</option>
-                        <option value="redesign">Redesign van een bestaande website</option>
-                        <option value="ai-integratie">AI-integratie op een bestaande site</option>
-                        <option value="onderhoud">Onderhoud of aanpassingen</option>
-                        <option value="other">Anders</option>
-                    </select>
-                </div>
-
-                <div>
-                    <label class="contact-label">Vertel ons meer over uw project</label>
-                    <textarea name="challenge" rows="4" class="contact-input" style="resize: vertical;" placeholder="Wat wilt u bereiken? Heeft u al een idee van de uitstraling, functionaliteit of doelgroep?"></textarea>
-                </div>
-
-                <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
                     <div>
-                        <label class="contact-label">Gewenst budget</label>
-                        <select name="companySize" class="contact-input">
-                            <option value="">Selecteer een range</option>
-                            <option value="onder-1000">Onder €1.000</option>
-                            <option value="1000-2500">€1.000 – €2.500</option>
-                            <option value="2500-5000">€2.500 – €5.000</option>
-                            <option value="5000-plus">€5.000+</option>
-                            <option value="nader-te-bepalen">Nader te bepalen</option>
-                        </select>
-                    </div>
-                    <div>
-                        <label class="contact-label">Hoe heeft u ons gevonden?</label>
-                        <select name="referral" class="contact-input">
-                            <option value="">Selecteer optie</option>
-                            <option value="google">Google</option>
-                            <option value="social">Social media</option>
-                            <option value="referral">Via via</option>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Wat heeft u nodig? <span class="text-red-500">*</span></label>
+                        <select name="interest" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent">
+                            <option value="">Selecteer een optie</option>
+                            <option value="bedrijfswebsite">Een nieuwe bedrijfswebsite</option>
+                            <option value="webapplicatie">Een webapplicatie of klantportaal</option>
+                            <option value="landingspagina">Een landingspagina</option>
+                            <option value="redesign">Redesign van een bestaande website</option>
+                            <option value="ai-integratie">AI-integratie op een bestaande site</option>
+                            <option value="onderhoud">Onderhoud of aanpassingen</option>
                             <option value="other">Anders</option>
                         </select>
                     </div>
-                </div>
 
-                <div id="status-message" class="hidden p-3 rounded-lg"></div>
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Vertel ons meer over uw project</label>
+                        <textarea name="challenge" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent resize-vertical" placeholder="Wat wilt u bereiken? Ideeën over uitstraling, functionaliteit of doelgroep?"></textarea>
+                    </div>
 
-                <div>
-                    <button type="button" id="contact-send-btn" class="inline-flex items-center gap-2 bg-black border-2 border-black text-white px-6 py-3 rounded-xl font-bold text-base transition-all cursor-pointer" style="box-shadow: 0 4px 10px rgba(0,0,0,0.1);">
-                        <span>Verstuur aanvraag</span>
-                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
-                        </svg>
-                    </button>
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-end">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Gewenst budget</label>
+                            <select name="companySize" class="w-full px-3 py-2 h-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent appearance-none">
+                                <option value="">Selecteer een range</option>
+                                <option value="onder-1000">Onder €1.000</option>
+                                <option value="1000-2500">€1.000 – €2.500</option>
+                                <option value="2500-5000">€2.500 – €5.000</option>
+                                <option value="5000-plus">€5.000+</option>
+                                <option value="nader-te-bepalen">Nader te bepalen</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Hoe heeft u ons gevonden?</label>
+                            <select name="referral" class="w-full px-3 py-2 h-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-emerald-500 focus:border-transparent appearance-none">
+                                <option value="">Selecteer optie</option>
+                                <option value="google">Google</option>
+                                <option value="social">Social media</option>
+                                <option value="referral">Via via</option>
+                                <option value="other">Anders</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="status-message" class="hidden p-3 rounded-lg"></div>
+
+                    <div class="flex justify-center">
+                        <button type="button" id="contact-send-btn" class="bg-black border-2 border-black text-white px-6 py-3 rounded-xl font-bold text-base transition-all flex items-center gap-2" style="box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                            <span>Verstuur aanvraag</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </button>
+                    </div>
                 </div>
             </div>
 
-            <!-- Info Panel -->
-            <div class="space-y-6">
-                <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
-                    <h2 class="text-lg font-bold text-slate-900 mb-4">Wat gebeurt er hierna?</h2>
-                    <ul class="space-y-4">
-                        <li class="flex items-start gap-3">
-                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold flex items-center justify-center mt-0.5">1</span>
-                            <p class="text-gray-600 text-sm leading-relaxed">Wij bekijken uw aanvraag en nemen binnen één werkdag contact met u op.</p>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold flex items-center justify-center mt-0.5">2</span>
-                            <p class="text-gray-600 text-sm leading-relaxed">We plannen een kort kennismakingsgesprek om uw wensen goed te begrijpen.</p>
-                        </li>
-                        <li class="flex items-start gap-3">
-                            <span class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold flex items-center justify-center mt-0.5">3</span>
-                            <p class="text-gray-600 text-sm leading-relaxed">U ontvangt een voorstel op maat — inclusief scope, tijdlijn en vaste prijs.</p>
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="bg-white rounded-2xl border border-gray-100 shadow-sm p-6">
-                    <h2 class="text-lg font-bold text-slate-900 mb-4">Direct contact</h2>
-                    <div class="space-y-3 text-sm text-gray-600">
-                        <p class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
-                            (+31) 6 390-308-61
+            <!-- Information Panel -->
+            <div class="bg-white rounded-lg shadow border border-gray-200">
+                <div class="p-6">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Neem contact op</h2>
+                    <div class="space-y-4 text-gray-600">
+                        <p>
+                            Vertel ons wat u nodig heeft — wij sturen u binnen één werkdag een vrijblijvende offerte. Geen standaardpakketten, geen verborgen kosten.
                         </p>
-                        <p class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                            Vlotlaan 805a, Monster
+                        <p>
+                            Wij nemen de tijd om uw situatie goed te begrijpen en stellen een voorstel op dat écht bij uw bedrijf past.
                         </p>
-                        <p class="flex items-center gap-2">
-                            <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"></path></svg>
-                            Reactie binnen 1 werkdag
-                        </p>
+                        <h3 class="font-semibold text-gray-800 mt-6 mb-3">Wat gebeurt er hierna:</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <span class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold flex items-center justify-center mt-0.5">1</span>
+                                <span>Wij bekijken uw aanvraag en nemen binnen één werkdag contact op.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold flex items-center justify-center mt-0.5">2</span>
+                                <span>We plannen een kort kennismakingsgesprek om uw wensen goed te begrijpen.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="flex-shrink-0 w-6 h-6 rounded-full bg-emerald-100 text-emerald-700 text-xs font-bold flex items-center justify-center mt-0.5">3</span>
+                                <span>U ontvangt een voorstel op maat — inclusief scope, tijdlijn en vaste prijs.</span>
+                            </li>
+                        </ul>
+                        <div class="mt-6 pt-6 border-t border-gray-100 space-y-2 text-sm">
+                            <p class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                (+31) 6 390-308-61
+                            </p>
+                            <p class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-emerald-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                Vlotlaan 805a, Monster
+                            </p>
+                        </div>
                     </div>
                 </div>
             </div>
 
         </div>
-    </section>
-
+    </div>
 </main>
 
 <script>
