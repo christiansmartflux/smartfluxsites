@@ -28,8 +28,8 @@
         const radius = 180;   // Bigger size
         const speed = 0.008;  // Slower, continuous transition
         const dotSize = 3;    // Dot size
-        const lineColor = '#6366f1'; // Indigo-purple
-        const secondaryLineColor = '#818cf8'; // Lighter indigo
+        const lineColor = '#059669'; // Emerald
+        const secondaryLineColor = '#34d399'; // Lighter emerald
         const dotColor = '#ffffff';
         const mouseInfluence = 200; // Larger distance of mouse influence
         const mouseStrength = 0.15; // Strength of attraction (0-1)
@@ -141,7 +141,7 @@
 
             // Draw more interconnective lines (thicker and more visible)
             ctx.beginPath();
-            ctx.strokeStyle = 'rgba(99, 102, 241, 0.25)'; // Indigo-purple with transparency
+            ctx.strokeStyle = 'rgba(5, 150, 105, 0.25)'; // Emerald with transparency
             ctx.lineWidth = 1.5; // Same as outer lines
             for (let i = 0; i < points.length; i++) {
                 // Connect to multiple partners for denser network
