@@ -89,10 +89,17 @@
             }
 
             // Highlight current nav link
+            // Maps child routes to their parent nav item so the parent stays highlighted
+            const parentRoutes = {
+                '/werkwijze': '/services',
+                '/portfolio': '/services',
+            };
+            const activeHref = parentRoutes[path] || path;
+
             const navLinks = document.querySelectorAll('header nav a[href^="/"]:not(.logo-link)');
             navLinks.forEach(link => {
                 const linkHref = link.getAttribute('href');
-                if (linkHref === path || (path === '/' && linkHref === '/')) {
+                if (linkHref === activeHref) {
                     link.classList.add('text-brand-blue');
                     link.classList.remove('text-gray-600');
                 } else {

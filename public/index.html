@@ -188,9 +188,11 @@
                 <h4 class="font-bold mb-4 text-lg" data-i18n="footer_quick_links">Quick Links</h4>
                 <ul class="space-y-2 text-gray-400">
                     <li><a href="/" class="hover:text-brand-blue transition" data-i18n="nav_home">Home</a></li>
-                    <li><a href="/services" class="hover:text-brand-blue transition" data-i18n="nav_services">Diensten</a></li>
-                    <li><a href="/case-studies" class="hover:text-brand-blue transition" data-i18n="nav_case_studies">Case Studies</a></li>
-                    <li><a href="/about" class="hover:text-brand-blue transition" data-i18n="nav_about">About Us</a></li>
+                    <li class="text-gray-400 font-normal pt-1" data-i18n="nav_services">Diensten</li>
+                    <li class="pl-4 text-sm"><a href="/services" class="hover:text-brand-blue transition" data-i18n="nav_services_main">Onze Diensten</a></li>
+                    <li class="pl-4 text-sm"><a href="/werkwijze" class="hover:text-brand-blue transition" data-i18n="nav_werkwijze">Werkwijze</a></li>
+                    <li class="pl-4 text-sm"><a href="/portfolio" class="hover:text-brand-blue transition" data-i18n="nav_portfolio">Portfolio</a></li>
+                    <li><a href="/about" class="hover:text-brand-blue transition" data-i18n="nav_about">Over ons</a></li>
                     <li><a href="/contact" class="hover:text-brand-blue transition" data-i18n="nav_contact">Contact</a></li>
                 </ul>
             </div>
@@ -258,6 +260,17 @@
                     closeMenu();
                 }
             });
+        })();
+
+        // Match body padding-top to exact header height so colored hero sections
+        // start flush against the header with no white gap
+        (function() {
+            const header = document.querySelector('header');
+            function syncPadding() {
+                document.body.style.paddingTop = header.offsetHeight + 'px';
+            }
+            syncPadding();
+            window.addEventListener('resize', syncPadding);
         })();
     </script>
     <script type="module">
