@@ -12,6 +12,9 @@
             '/': `/content/home${suffix}`,
             '/about': `/content/about${suffix}`,
             '/case-studies': `/content/case-studies${suffix}`,
+            '/services': `/content/services${suffix}`,
+            '/werkwijze': `/content/werkwijze${suffix}`,
+            '/portfolio': `/content/portfolio${suffix}`,
             '/console': `/content/console${suffix}`,
             '/console-experience': `/content/console-experience${suffix}`,
             '/contact': `/content/contact${suffix}`,
@@ -86,10 +89,17 @@
             }
 
             // Highlight current nav link
+            // Maps child routes to their parent nav item so the parent stays highlighted
+            const parentRoutes = {
+                '/werkwijze': '/services',
+                '/portfolio': '/services',
+            };
+            const activeHref = parentRoutes[path] || path;
+
             const navLinks = document.querySelectorAll('header nav a[href^="/"]:not(.logo-link)');
             navLinks.forEach(link => {
                 const linkHref = link.getAttribute('href');
-                if (linkHref === path || (path === '/' && linkHref === '/')) {
+                if (linkHref === activeHref) {
                     link.classList.add('text-brand-blue');
                     link.classList.remove('text-gray-600');
                 } else {
@@ -138,6 +148,9 @@
             '/': 'smartflux - Custom AI Solutions',
             '/about': 'About Us - smartflux',
             '/case-studies': 'Case Studies - smartflux',
+            '/services': 'Diensten - smartflux sites',
+            '/werkwijze': 'Werkwijze - smartflux sites',
+            '/portfolio': 'Portfolio - smartflux sites',
             '/console': 'Console - smartflux',
             '/console-experience': 'Experience the Console - smartflux',
             '/contact': 'Contact - smartflux',

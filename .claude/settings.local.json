@@ -5,7 +5,9 @@
       "Bash(npm start:*)",
       "Bash(npm install:*)",
       "Bash(firebase login:*)",
-      "Bash(firebase projects:list)"
+      "Bash(firebase projects:list)",
+      "Bash(ls c:/Users/chris/smartfluxsites/public/content/*.html)",
+      "Bash(npm run:*)"
     ]
   }
 }
