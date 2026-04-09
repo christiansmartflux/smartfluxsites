@@ -3,27 +3,21 @@
     let currentContent = null;
     let carouselTimeoutId = null;
 
-    // Routes mapping - updated by language system
+    // Routes mapping
     function getRoutes() {
-        const lang = window.smartfluxLang ? window.smartfluxLang.getCurrentLang() : 'en';
-        const suffix = lang === 'nl' ? '-nl.html' : '.html';
-
         return {
-            '/': `/content/home${suffix}`,
-            '/about': `/content/about${suffix}`,
-            '/case-studies': `/content/case-studies${suffix}`,
-            '/services': `/content/services${suffix}`,
-            '/werkwijze': `/content/werkwijze${suffix}`,
-            '/portfolio': `/content/portfolio${suffix}`,
-            '/console': `/content/console${suffix}`,
-            '/console-experience': `/content/console-experience${suffix}`,
-            '/contact': `/content/contact${suffix}`,
-            '/legal/liability-ai-disclaimer': `/content/liability-ai-disclaimer${suffix}`,
-            '/legal/data-processing-agreement': `/content/data-processing-agreement${suffix}`,
-            '/legal/intellectual-property-rights': `/content/intellectual-property-rights${suffix}`,
-            '/legal/service-level-agreement': `/content/service-level-agreement${suffix}`,
-            '/legal/usage-api-billing': `/content/usage-api-billing${suffix}`,
-            '/legal/terms-of-service': `/content/terms-of-service${suffix}`
+            '/': '/content/home-nl.html',
+            '/about': '/content/about-nl.html',
+            '/services': '/content/services-nl.html',
+            '/werkwijze': '/content/werkwijze-nl.html',
+            '/portfolio': '/content/portfolio-nl.html',
+            '/contact': '/content/contact-nl.html',
+            '/legal/liability-ai-disclaimer': '/content/liability-ai-disclaimer-nl.html',
+            '/legal/data-processing-agreement': '/content/data-processing-agreement-nl.html',
+            '/legal/intellectual-property-rights': '/content/intellectual-property-rights-nl.html',
+            '/legal/service-level-agreement': '/content/service-level-agreement-nl.html',
+            '/legal/usage-api-billing': '/content/usage-api-billing-nl.html',
+            '/legal/terms-of-service': '/content/terms-of-service-nl.html'
         };
     }
 
