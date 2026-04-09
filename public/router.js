@@ -3,27 +3,23 @@
     let currentContent = null;
     let carouselTimeoutId = null;
 
-    // Routes mapping - updated by language system
+    // Routes mapping
     function getRoutes() {
-        const lang = window.smartfluxLang ? window.smartfluxLang.getCurrentLang() : 'en';
-        const suffix = lang === 'nl' ? '-nl.html' : '.html';
-
+        const lang = (window.smartfluxLang && window.smartfluxLang.getCurrentLang()) || 'nl';
+        const suffix = lang === 'en' ? '' : '-nl';
         return {
-            '/': `/content/home${suffix}`,
-            '/about': `/content/about${suffix}`,
-            '/case-studies': `/content/case-studies${suffix}`,
-            '/services': `/content/services${suffix}`,
-            '/werkwijze': `/content/werkwijze${suffix}`,
-            '/portfolio': `/content/portfolio${suffix}`,
-            '/console': `/content/console${suffix}`,
-            '/console-experience': `/content/console-experience${suffix}`,
-            '/contact': `/content/contact${suffix}`,
-            '/legal/liability-ai-disclaimer': `/content/liability-ai-disclaimer${suffix}`,
-            '/legal/data-processing-agreement': `/content/data-processing-agreement${suffix}`,
-            '/legal/intellectual-property-rights': `/content/intellectual-property-rights${suffix}`,
-            '/legal/service-level-agreement': `/content/service-level-agreement${suffix}`,
-            '/legal/usage-api-billing': `/content/usage-api-billing${suffix}`,
-            '/legal/terms-of-service': `/content/terms-of-service${suffix}`
+            '/': `/content/home${suffix}.html`,
+            '/about': `/content/about${suffix}.html`,
+            '/services': `/content/services${suffix}.html`,
+            '/werkwijze': `/content/werkwijze${suffix}.html`,
+            '/portfolio': `/content/portfolio${suffix}.html`,
+            '/contact': `/content/contact${suffix}.html`,
+            '/legal/liability-ai-disclaimer': `/content/liability-ai-disclaimer${suffix}.html`,
+            '/legal/data-processing-agreement': `/content/data-processing-agreement${suffix}.html`,
+            '/legal/intellectual-property-rights': `/content/intellectual-property-rights${suffix}.html`,
+            '/legal/service-level-agreement': `/content/service-level-agreement${suffix}.html`,
+            '/legal/usage-api-billing': `/content/usage-api-billing${suffix}.html`,
+            '/legal/terms-of-service': `/content/terms-of-service${suffix}.html`
         };
     }
 
@@ -145,7 +141,7 @@
     // Update document title
     function updatePageTitle(path) {
         const titles = {
-            '/': 'smartflux - Custom AI Solutions',
+            '/': 'smartflux - websites that deliver',
             '/about': 'About Us - smartflux',
             '/case-studies': 'Case Studies - smartflux',
             '/services': 'Diensten - smartflux sites',

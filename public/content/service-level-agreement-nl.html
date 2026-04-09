@@ -3,30 +3,29 @@
     <section class="max-w-4xl mx-auto px-6 py-16">
         <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Service Level Agreement (SLA)</h1>
         <p class="text-lg text-slate-600 mb-10">
-            Deze SLA beschrijft beschikbaarheidsdoelen, supportreacties en onderhoudsprocessen voor smartflux diensten.
+            Deze SLA beschrijft beschikbaarheidsdoelen, supportreacties en onderhoudsprocessen voor door
+            smartflux sites gehoste en beheerde websites.
         </p>
 
         <ol class="list-decimal pl-6 space-y-8 text-slate-700">
             <li>
                 <h2 class="text-xl font-semibold text-slate-900 mb-2">Beschikbaarheid en uptime</h2>
                 <p class="mb-3">
-                    smartflux streeft naar hoge beschikbaarheid van alle gedeployde AI-tools. De Klant erkent echter dat de
-                    dienstverlening afhankelijk is van externe infrastructuur:
+                    smartflux sites streeft naar een hoge beschikbaarheid van alle gehoste websites. Websites worden
+                    gehost via Firebase Hosting (Google Cloud), een betrouwbaar platform met een eigen uptime-garantie
+                    van 99,9%. De Klant erkent dat de beschikbaarheid mede afhankelijk is van deze externe
+                    hostinginfrastructuur.
                 </p>
-                <ul class="list-disc list-inside pl-6 space-y-2">
-                    <li>Kernplatform: gehost op Microsoft Azure (EER). Wij streven naar 99,9% infrastructuur uptime.</li>
-                    <li>AI-verwerking: afhankelijk van de beschikbaarheid van API leveranciers (OpenAI, Google, Anthropic).</li>
-                    <li>Automatisering: beheerd via n8n.</li>
-                </ul>
-                <p class="mt-3">
-                    smartflux is niet verantwoordelijk voor serviceonderbrekingen door uitval van deze externe leveranciers.
+                <p>
+                    smartflux sites is niet verantwoordelijk voor serviceonderbrekingen veroorzaakt door storingen
+                    aan de kant van de hostingprovider of andere externe partijen buiten onze controle.
                 </p>
             </li>
             <li>
                 <h2 class="text-xl font-semibold text-slate-900 mb-2">Supportniveaus en responsetijden</h2>
                 <p class="mb-4">
-                    Supportverzoeken worden ingedeeld op ernst. smartflux doet commercieel redelijke inspanningen om te reageren
-                    binnen de volgende termijnen tijdens Werkuren (maandag - vrijdag, 09:00 - 17:00 CET):
+                    Supportverzoeken worden ingedeeld op ernst. smartflux sites doet commercieel redelijke inspanningen
+                    om te reageren binnen de volgende termijnen tijdens werkuren (maandag – vrijdag, 09:00 – 17:00 CET):
                 </p>
                 <div class="overflow-x-auto">
                     <table class="w-full text-left border border-gray-200 text-sm">
@@ -40,18 +39,18 @@
                         <tbody>
                             <tr>
                                 <td class="px-4 py-2 border-b font-semibold">Kritiek</td>
-                                <td class="px-4 py-2 border-b">Kern AI-tool is niet beschikbaar; bedrijfskritisch proces ligt stil.</td>
-                                <td class="px-4 py-2 border-b">&lt; 24 Werkuren</td>
+                                <td class="px-4 py-2 border-b">Website is volledig onbereikbaar of vertoont ernstige fouten die de kernfunctionaliteit blokkeren.</td>
+                                <td class="px-4 py-2 border-b">&lt; 24 werkuren</td>
                             </tr>
                             <tr>
                                 <td class="px-4 py-2 border-b font-semibold">Hoog</td>
-                                <td class="px-4 py-2 border-b">Significante storing; workaround beschikbaar maar inefficient.</td>
-                                <td class="px-4 py-2 border-b">&lt; 48 Werkuren</td>
+                                <td class="px-4 py-2 border-b">Significante storing in een onderdeel van de website; tijdelijke oplossing mogelijk maar niet ideaal.</td>
+                                <td class="px-4 py-2 border-b">&lt; 48 werkuren</td>
                             </tr>
                             <tr>
-                                <td class="px-4 py-2 font-semibold">Midden/Laag</td>
-                                <td class="px-4 py-2">Kleine bugs, cosmetische issues of algemene vragen.</td>
-                                <td class="px-4 py-2">&lt; 5 Werkdagen</td>
+                                <td class="px-4 py-2 font-semibold">Midden / Laag</td>
+                                <td class="px-4 py-2">Kleine bugs, cosmetische issues, contentvragen of algemene verzoeken.</td>
+                                <td class="px-4 py-2">&lt; 5 werkdagen</td>
                             </tr>
                         </tbody>
                     </table>
@@ -60,31 +59,34 @@
             <li>
                 <h2 class="text-xl font-semibold text-slate-900 mb-2">Onderhoudsvensters</h2>
                 <p class="mb-3">
-                    Om de "Digital Vault" veilig te houden, voert smartflux periodiek onderhoud en beveiligingsupdates uit.
+                    smartflux sites voert periodiek onderhoud uit aan gehoste websites, waaronder beveiligingsupdates,
+                    prestatieverbeteringen en technische updates.
                 </p>
                 <ul class="list-disc list-inside pl-6 space-y-2">
-                    <li>Gepland onderhoud: De Klant wordt minimaal 24 uur vooraf geinformeerd als downtime wordt verwacht.</li>
-                    <li>Urgent onderhoud: Kritieke security patches kunnen direct worden toegepast om data-integriteit te beschermen.</li>
+                    <li>Gepland onderhoud: de Klant wordt minimaal 24 uur vooraf geïnformeerd indien downtime wordt verwacht.</li>
+                    <li>Urgent onderhoud: kritieke beveiligingspatches kunnen direct worden doorgevoerd ter bescherming van de website en bezoekersgegevens.</li>
                 </ul>
             </li>
             <li>
                 <h2 class="text-xl font-semibold text-slate-900 mb-2">Uitsluitingen</h2>
                 <p class="mb-3">De support- en uptime-doelen gelden niet voor:</p>
                 <ul class="list-disc list-inside pl-6 space-y-2">
-                    <li>Fouten veroorzaakt door wijzigingen van de Klant aan AI-tools (inclusief n8n configuraties) of API-instellingen.</li>
-                    <li>Issues door onjuiste data-invoer door de Klant of eindgebruikers.</li>
-                    <li>"Force Majeure" gebeurtenissen (wereldwijde internetstoringen of grote provideruitval).</li>
+                    <li>Fouten veroorzaakt door wijzigingen aan de website door de Klant of door derden ingeschakeld door de Klant.</li>
+                    <li>Issues als gevolg van onjuist of onvolledig aangeleverd materiaal door de Klant.</li>
+                    <li>Storingen bij externe platformen zoals domeingregistrars of e-maildiensten buiten onze verantwoordelijkheid.</li>
+                    <li>"Force majeure" gebeurtenissen zoals grootschalige internetstoringen of uitval bij cloudproviders.</li>
                 </ul>
             </li>
             <li>
                 <h2 class="text-xl font-semibold text-slate-900 mb-2">Correctieve actie</h2>
                 <p>
-                    Indien een AI-tool faalt door een bug in de door smartflux ontwikkelde logica, prioriteren wij een fix zonder
-                    extra kosten. Als de storing het gevolg is van een wijziging bij een derde partij API (bijv. een OpenAI update),
-                    kan het benodigde werk om de AI-tool aan te passen worden gefactureerd tegen het standaard uurtarief.
+                    Indien een website een fout vertoont die aantoonbaar het gevolg is van door smartflux sites
+                    ontwikkelde code of configuratie, wordt dit zonder extra kosten verholpen. Indien de storing
+                    het gevolg is van een wijziging bij een externe partij (bijv. een update van een geïntegreerde
+                    dienst of hostingplatform), kan het benodigde herstelwerk worden gefactureerd tegen het
+                    standaard uurtarief.
                 </p>
             </li>
         </ol>
     </section>
 </main>
-

@@ -3,80 +3,86 @@
     <section class="max-w-4xl mx-auto px-6 py-16">
         <h1 class="text-4xl md:text-5xl font-bold text-slate-900 mb-6">Service Level Agreement (SLA)</h1>
         <p class="text-lg text-slate-600 mb-10">
-            This SLA defines availability targets, support response times, and maintenance practices for smartflux services.
+            This SLA describes availability targets, support response times and maintenance processes for websites
+            hosted and managed by smartflux sites.
         </p>
 
         <ol class="list-decimal pl-6 space-y-8 text-slate-700">
             <li>
-                <h2 class="text-xl font-semibold text-slate-900 mb-2">Service Availability &amp; Uptime</h2>
-                <p class="mb-3">smartflux aims for high availability of all deployed AI-tools. However, the Client acknowledges that the service relies on third-party infrastructure:</p>
-                <ul class="list-disc list-inside pl-6 space-y-2">
-                    <li>Core Engine: Hosted on Microsoft Azure (EEA). We aim for 99.9% infrastructure uptime.</li>
-                    <li>AI Processing: Dependent on the uptime of API providers (OpenAI, Google, Anthropic).</li>
-                    <li>Automations: Managed via n8n.</li>
-                </ul>
-                <p class="mt-3">
-                    smartflux is not responsible for service interruptions caused by outages of these external providers.
+                <h2 class="text-xl font-semibold text-slate-900 mb-2">Availability and uptime</h2>
+                <p class="mb-3">
+                    smartflux sites aims for high availability of all hosted websites. Websites are hosted via
+                    Firebase Hosting (Google Cloud), a reliable platform with its own uptime guarantee of 99.9%.
+                    The Client acknowledges that availability is also dependent on this external hosting infrastructure.
+                </p>
+                <p>
+                    smartflux sites is not responsible for service interruptions caused by outages at the hosting
+                    provider or other external parties beyond our control.
                 </p>
             </li>
             <li>
-                <h2 class="text-xl font-semibold text-slate-900 mb-2">Support Tiers &amp; Response Times</h2>
+                <h2 class="text-xl font-semibold text-slate-900 mb-2">Support levels and response times</h2>
                 <p class="mb-4">
-                    Support requests are categorized by severity. smartflux will make commercially reasonable efforts to respond
-                    within the following timeframes during Business Hours (Monday – Friday, 09:00 - 17:00 CET):
+                    Support requests are classified by severity. smartflux sites makes commercially reasonable efforts
+                    to respond within the following timeframes during business hours (Monday – Friday, 09:00 – 17:00 CET):
                 </p>
                 <div class="overflow-x-auto">
                     <table class="w-full text-left border border-gray-200 text-sm">
                         <thead class="bg-gray-50 text-gray-700">
                             <tr>
-                                <th class="px-4 py-2 border-b">Severity Level</th>
+                                <th class="px-4 py-2 border-b">Severity level</th>
                                 <th class="px-4 py-2 border-b">Definition</th>
-                                <th class="px-4 py-2 border-b">Target Response Time</th>
+                                <th class="px-4 py-2 border-b">Target response time</th>
                             </tr>
                         </thead>
                         <tbody>
                             <tr>
                                 <td class="px-4 py-2 border-b font-semibold">Critical</td>
-                                <td class="px-4 py-2 border-b">Core AI-tool is unavailable; business-critical process halted.</td>
-                                <td class="px-4 py-2 border-b">&lt; 24 Business Hours</td>
+                                <td class="px-4 py-2 border-b">Website is completely unreachable or shows severe errors blocking core functionality.</td>
+                                <td class="px-4 py-2 border-b">&lt; 24 business hours</td>
                             </tr>
                             <tr>
                                 <td class="px-4 py-2 border-b font-semibold">High</td>
-                                <td class="px-4 py-2 border-b">Significant malfunction; workaround available but inefficient.</td>
-                                <td class="px-4 py-2 border-b">&lt; 48 Business Hours</td>
+                                <td class="px-4 py-2 border-b">Significant issue with a part of the website; temporary workaround possible but not ideal.</td>
+                                <td class="px-4 py-2 border-b">&lt; 48 business hours</td>
                             </tr>
                             <tr>
-                                <td class="px-4 py-2 font-semibold">Medium/Low</td>
-                                <td class="px-4 py-2">Minor bugs, cosmetic issues, or general questions.</td>
-                                <td class="px-4 py-2">&lt; 5 Business Days</td>
+                                <td class="px-4 py-2 font-semibold">Medium / Low</td>
+                                <td class="px-4 py-2">Minor bugs, cosmetic issues, content questions or general requests.</td>
+                                <td class="px-4 py-2">&lt; 5 business days</td>
                             </tr>
                         </tbody>
                     </table>
                 </div>
             </li>
             <li>
-                <h2 class="text-xl font-semibold text-slate-900 mb-2">Maintenance Windows</h2>
-                <p class="mb-3">To ensure the "Digital Vault" remains secure, smartflux periodically performs maintenance and security updates.</p>
+                <h2 class="text-xl font-semibold text-slate-900 mb-2">Maintenance windows</h2>
+                <p class="mb-3">
+                    smartflux sites periodically performs maintenance on hosted websites, including security updates,
+                    performance improvements and technical updates.
+                </p>
                 <ul class="list-disc list-inside pl-6 space-y-2">
-                    <li>Planned Maintenance: The Client will be notified at least 24 hours in advance if downtime is expected.</li>
-                    <li>Emergency Maintenance: Critical security patches may be applied immediately to protect data integrity.</li>
+                    <li>Planned maintenance: the Client is notified at least 24 hours in advance where downtime is expected.</li>
+                    <li>Urgent maintenance: critical security patches may be applied immediately to protect the website and visitor data.</li>
                 </ul>
             </li>
             <li>
                 <h2 class="text-xl font-semibold text-slate-900 mb-2">Exclusions</h2>
                 <p class="mb-3">The support and uptime targets do not apply to:</p>
                 <ul class="list-disc list-inside pl-6 space-y-2">
-                    <li>Failures caused by the Client modifying the AI-tools (including n8n configurations) or API settings.</li>
-                    <li>Issues arising from incorrect data input by the Client or their end-users.</li>
-                    <li>"Force Majeure" events (global internet outages or major provider collapses).</li>
+                    <li>Errors caused by changes to the website by the Client or third parties engaged by the Client.</li>
+                    <li>Issues resulting from incorrectly or incompletely provided materials by the Client.</li>
+                    <li>Outages at external platforms such as domain registrars or email services outside our responsibility.</li>
+                    <li>"Force majeure" events such as large-scale internet outages or cloud provider failures.</li>
                 </ul>
             </li>
             <li>
-                <h2 class="text-xl font-semibold text-slate-900 mb-2">Corrective Action</h2>
+                <h2 class="text-xl font-semibold text-slate-900 mb-2">Corrective action</h2>
                 <p>
-                    In the event that an AI-tool fails due to a bug in the logic developed by smartflux, we will prioritize a fix
-                    at no additional cost. If the failure is due to a change in the third-party API (e.g., an OpenAI update), the
-                    work required to adapt the AI-tool may be billed at our standard hourly rate.
+                    If a website shows an error demonstrably caused by code or configuration developed by smartflux sites,
+                    this will be resolved at no extra cost. If the issue results from a change at an external party
+                    (e.g. an update to an integrated service or hosting platform), the required remediation work may
+                    be invoiced at the standard hourly rate.
                 </p>
             </li>
         </ol>

@@ -1,10 +1,394 @@
-<!-- Portfolio Pagina - NL (placeholder) -->
-<main class="flex-grow">
-    <section class="bg-slate-900 text-white py-16">
-        <div class="max-w-6xl mx-auto px-6">
-            <p class="uppercase text-sm tracking-[0.2em] text-gray-300 mb-4">Ons werk</p>
-            <h1 class="text-5xl md:text-6xl font-bold leading-tight text-white">Portfolio</h1>
-            <p class="text-xl text-gray-200 mt-6 max-w-2xl">Deze pagina wordt binnenkort gevuld met voorbeelden van websites die wij hebben gebouwd.</p>
+<!-- Portfolio Page - EN -->
+<main class="flex-grow portfolio-page">
+<style>
+    .portfolio-page { background: #ffffff; }
+
+    .portfolio-header {
+        padding: 60px 40px 40px;
+        max-width: 1600px;
+        margin: 0 auto;
+        background-color: #eff6ff;
+    }
+
+    .portfolio-page-title { font-size: 2.75rem; font-weight: 700; color: #0f172a; margin-bottom: 16px; line-height: 1.2; }
+    .portfolio-page-desc { font-size: 1.15rem; color: #64748b; line-height: 1.7; max-width: 700px; }
+
+    .portfolio-content-wrapper {
+        max-width: 1600px;
+        margin: 0 auto;
+        padding: 40px 40px 80px;
+        display: grid;
+        grid-template-columns: 0.7fr 1.8fr;
+        gap: 80px;
+        align-items: flex-start;
+    }
+
+    .portfolio-text-column { padding-right: 20px; max-width: 500px; }
+
+    .portfolio-project-section {
+        padding: 60px 0;
+        margin-bottom: 40px;
+        opacity: 0.35;
+        transition: opacity 0.3s ease;
+    }
+
+    .portfolio-project-section.active { opacity: 1; }
+
+    .portfolio-sub-section {
+        padding: 40px 0 40px 20px;
+        margin-bottom: 0;
+        opacity: 0.35;
+        transition: opacity 0.3s ease;
+        border-left: 2px solid #e5e7eb;
+    }
+
+    .portfolio-sub-section.active {
+        opacity: 1;
+        border-left-color: #4a90e2;
+    }
+
+    .portfolio-project-group {
+        padding: 60px 0 0;
+        margin-bottom: 0;
+    }
+
+    .portfolio-project-group-header {
+        margin-bottom: 32px;
+        padding-bottom: 24px;
+        border-bottom: 1px solid #f1f5f9;
+    }
+
+    .portfolio-caption-label {
+        display: inline-block;
+        text-transform: uppercase;
+        font-size: 0.7rem;
+        letter-spacing: 0.12em;
+        color: #4a90e2;
+        background: rgba(74, 144, 226, 0.08);
+        padding: 5px 14px;
+        border-radius: 12px;
+        margin-bottom: 16px;
+        font-weight: 600;
+    }
+
+    .portfolio-project-section h3,
+    .portfolio-project-group-header h3 {
+        font-size: 2rem;
+        font-weight: 700;
+        color: #0f172a;
+        margin-bottom: 14px;
+        line-height: 1.3;
+    }
+
+    .portfolio-sub-section h4 {
+        font-size: 1.15rem;
+        font-weight: 600;
+        color: #0f172a;
+        margin-bottom: 8px;
+    }
+
+    .portfolio-project-section p,
+    .portfolio-project-group-header p { color: #475569; font-size: 1.1rem; line-height: 1.75; margin-bottom: 16px; }
+
+    .portfolio-sub-section p { color: #64748b; font-size: 1rem; line-height: 1.7; margin-bottom: 12px; }
+
+    .portfolio-project-section ul,
+    .portfolio-project-group-header ul {
+        list-style: none; padding: 0; margin: 0 0 20px 0;
+        display: flex; flex-direction: column; gap: 8px;
+    }
+
+    .portfolio-project-section ul li,
+    .portfolio-project-group-header ul li {
+        display: flex; align-items: center; gap: 8px;
+        color: #64748b; font-size: 0.95rem;
+    }
+
+    .portfolio-project-section ul li::before,
+    .portfolio-project-group-header ul li::before {
+        content: ''; display: inline-block; width: 6px; height: 6px;
+        border-radius: 50%; background-color: #d1d5db; flex-shrink: 0;
+    }
+
+    .portfolio-project-link {
+        display: inline-flex; align-items: center; gap: 6px;
+        color: #4a90e2; font-weight: 600; font-size: 0.95rem;
+        text-decoration: none; transition: color 0.2s ease;
+    }
+    .portfolio-project-link:hover { color: #2563eb; }
+
+    .portfolio-cta-button {
+        display: inline-flex; align-items: center; gap: 8px;
+        padding: 10px 20px; font-size: 0.9em; font-weight: 600;
+        text-decoration: none; color: #ffffff; background-color: #000000;
+        border: 2px solid #000000; border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1); transition: all 0.3s ease; cursor: pointer;
+    }
+    .portfolio-cta-button:hover {
+        background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+        color: #000000; border-color: #4a90e2;
+        box-shadow: 0 8px 18px rgba(0,0,0,0.25);
+    }
+    .portfolio-cta-button svg { transition: transform 0.3s ease; stroke: currentColor; }
+    .portfolio-cta-button:hover svg { transform: translateX(4px); }
+
+    .portfolio-image-column { position: sticky; top: 100px; height: fit-content; }
+
+    .portfolio-image-container {
+        position: relative; width: 100%; aspect-ratio: 16 / 9;
+        border-radius: 16px; overflow: hidden;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1), 0 2px 8px rgba(0,0,0,0.06);
+    }
+
+    .portfolio-image-slide {
+        position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+        opacity: 0; transition: opacity 0.5s ease;
+    }
+    .portfolio-image-slide.active { opacity: 1; }
+    .portfolio-image-slide img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+    @media (max-width: 1024px) {
+        .portfolio-header { padding: 40px 30px 30px; }
+        .portfolio-content-wrapper { display: block; padding: 30px 30px 60px; }
+        .portfolio-text-column { max-width: 100%; padding-right: 0; }
+        .portfolio-image-column { display: none; }
+        .portfolio-project-section, .portfolio-sub-section {
+            opacity: 1;
+            display: flex; flex-direction: column; gap: 16px;
+        }
+        .portfolio-project-section::after, .portfolio-sub-section::after {
+            content: ''; display: block; width: 100%; aspect-ratio: 16/9;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1), 0 2px 8px rgba(0,0,0,0.06);
+            background-size: cover; background-position: center; background-repeat: no-repeat;
+        }
+        .portfolio-project-section[data-image="SHS"]::after { background-image: url('/slides/SHS.png'); }
+        .portfolio-project-section[data-image="smartflux.ai"]::after { background-image: url('/slides/smartflux.ai.png'); }
+        .portfolio-sub-section[data-image="darkmode"]::after { background-image: url('/slides/darkmode.png'); }
+        .portfolio-sub-section[data-image="SHS2"]::after { background-image: url('/slides/SHS2.png'); }
+        .portfolio-sub-section[data-image="SHS3"]::after { background-image: url('/slides/SHS3.png'); }
+        .portfolio-sub-section[data-image="smartflux.aiagent"]::after { background-image: url('/slides/smartflux.aiagent.png'); }
+        .portfolio-sub-section[data-image="smartflux.ailanguage"]::after { background-image: url('/slides/smartflux.ailanguage.png'); }
+        .portfolio-sub-section[data-image="clientsupport"]::after { background-image: url('/slides/clientsupport.png'); }
+        .portfolio-sub-section[data-image="fileinputagent"]::after { background-image: url('/slides/fileinputagent.png'); }
+        .portfolio-page-title { font-size: 2.25rem; }
+        .portfolio-project-section h3 { font-size: 1.75rem; }
+    }
+
+    @media (max-width: 768px) {
+        .portfolio-header { padding: 32px 20px 24px; }
+        .portfolio-content-wrapper { padding: 20px 20px 40px; }
+        .portfolio-page-title { font-size: 1.75rem; }
+        .portfolio-project-section h3 { font-size: 1.5rem; }
+    }
+</style>
+
+    <section class="portfolio-header -mt-px">
+        <p class="uppercase text-sm tracking-[0.2em] text-blue-600 mb-4">Our work</p>
+        <h1 class="portfolio-page-title">Portfolio</h1>
+        <p class="portfolio-page-desc">A selection of websites and platforms we have built — from professional business sites to full web applications.</p>
+    </section>
+
+    <div class="portfolio-content-wrapper">
+        <div class="portfolio-text-column">
+
+            <!-- Project 1: SHS -->
+            <div class="portfolio-project-group">
+                <div class="portfolio-project-group-header">
+                    <span class="portfolio-caption-label">Business website</span>
+                    <h3>The Skin Health Society</h3>
+                    <p>For The Skin Health Society we built a clean, professional website that radiates trust and informs visitors immediately. The focus was on readability, a strong first impression and a design that fits the medical nature of the platform.</p>
+                    <ul>
+                        <li>Custom designed and built</li>
+                        <li>Mobile-friendly and fast</li>
+                        <li>Focused on trust and conversion</li>
+                    </ul>
+                    <a href="https://theskinhealthsociety.com" target="_blank" rel="noopener noreferrer" class="portfolio-project-link">
+                        View the live site
+                        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </div>
+
+                <div class="portfolio-sub-section" data-image="SHS">
+                    <h4>Professional look & feel</h4>
+                    <p>A clean, mobile-friendly design that immediately builds trust — exactly what a medical platform needs to convince visitors.</p>
+                </div>
+
+                <div class="portfolio-sub-section" data-image="SHS2">
+                    <h4>Integrated client reviews</h4>
+                    <p>We built a review system directly into the site — visitors see real experiences from others, boosting trust and conversion.</p>
+                </div>
+
+                <div class="portfolio-sub-section" data-image="SHS3">
+                    <h4>Online booking system</h4>
+                    <p>A fully integrated booking module that lets visitors schedule an appointment directly — without external tools or redirects.</p>
+                </div>
+            </div>
+
+            <!-- Project 2: Smartflux AI -->
+            <div class="portfolio-project-group">
+                <div class="portfolio-project-group-header">
+                    <span class="portfolio-caption-label">AI Platform</span>
+                    <h3>Smartflux AI</h3>
+                    <p>Smartflux AI is our own AI platform for businesses. We built the complete website from the ground up — including a modern landing page, services overview and integration with the underlying AI system.</p>
+                    <ul>
+                        <li>Fully custom design and development</li>
+                        <li>Integrated with AI backend</li>
+                        <li>Clean, modern and conversion-focused</li>
+                    </ul>
+                    <a href="https://smartflux.ai" target="_blank" rel="noopener noreferrer" class="portfolio-project-link">
+                        View the live site
+                        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </div>
+
+                <div class="portfolio-sub-section" data-image="smartflux.ai">
+                    <h4>Modern landing page</h4>
+                    <p>A clean, fast website that communicates the power of the platform immediately — designed to convince and convert visitors.</p>
+                </div>
+
+                <div class="portfolio-sub-section" data-image="smartflux.aiagent">
+                    <h4>Interactive AI agent on the site</h4>
+                    <p>We integrated a live AI chatbot directly into the website — visitors can ask questions in real time and are guided without any staff involvement.</p>
+                </div>
+
+                <div class="portfolio-sub-section" data-image="smartflux.ailanguage">
+                    <h4>Multilingual interface</h4>
+                    <p>The site supports multiple languages with a simple language switch — one click and the entire interface switches over. Ideal for businesses with an international audience.</p>
+                </div>
+            </div>
+
+            <!-- Project 3: Smartflux Console -->
+            <div class="portfolio-project-group">
+                <div class="portfolio-project-group-header">
+                    <span class="portfolio-caption-label">Web application</span>
+                    <h3>Smartflux Console</h3>
+                    <p>The Smartflux Console is the personal dashboard where clients access their AI tools. A full web application with accounts, login and a clear dashboard — secure, fast and always available.</p>
+                    <ul>
+                        <li>User accounts and authentication via Firebase</li>
+                        <li>Personal dashboard per user</li>
+                        <li>Real-time data and secure environment</li>
+                    </ul>
+                    <a href="https://console.smartflux.ai" target="_blank" rel="noopener noreferrer" class="portfolio-project-link">
+                        View the console
+                        <svg width="14" height="14" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                    </a>
+                </div>
+
+                <div class="portfolio-sub-section" data-image="darkmode">
+                    <h4>Themes & multilingual support</h4>
+                    <p>We build web applications with full theme support — including dark mode — and multilingual interfaces. Your users get an experience that suits them.</p>
+                </div>
+
+                <div class="portfolio-sub-section" data-image="clientsupport">
+                    <h4>Built-in support module</h4>
+                    <p>Your web application can include a live support channel where users get in touch directly — fully integrated into the interface, without external tools.</p>
+                </div>
+
+                <div class="portfolio-sub-section" data-image="fileinputagent">
+                    <h4>Personal user environments</h4>
+                    <p>We build web applications with personalised dashboards and overviews per user — everyone sees their own data, files and settings. Ideal for client portals, member areas or internal tools.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="portfolio-image-column">
+            <div class="portfolio-image-container">
+                <div class="portfolio-image-slide active" data-image="SHS">
+                    <img src="/slides/SHS.png" alt="The Skin Health Society">
+                </div>
+                <div class="portfolio-image-slide" data-image="SHS2">
+                    <img src="/slides/SHS2.png" alt="The Skin Health Society - Reviews">
+                </div>
+                <div class="portfolio-image-slide" data-image="SHS3">
+                    <img src="/slides/SHS3.png" alt="The Skin Health Society - Booking">
+                </div>
+                <div class="portfolio-image-slide" data-image="smartflux.ai">
+                    <img src="/slides/smartflux.ai.png" alt="Smartflux AI">
+                </div>
+                <div class="portfolio-image-slide" data-image="smartflux.aiagent">
+                    <img src="/slides/smartflux.aiagent.png" alt="Smartflux AI - Agent chat">
+                </div>
+                <div class="portfolio-image-slide" data-image="smartflux.ailanguage">
+                    <img src="/slides/smartflux.ailanguage.png" alt="Smartflux AI - Language switch">
+                </div>
+                <div class="portfolio-image-slide" data-image="darkmode">
+                    <img src="/slides/darkmode.png" alt="Smartflux Console - Dark mode">
+                </div>
+                <div class="portfolio-image-slide" data-image="clientsupport">
+                    <img src="/slides/clientsupport.png" alt="Smartflux Console - Support">
+                </div>
+                <div class="portfolio-image-slide" data-image="fileinputagent">
+                    <img src="/slides/fileinputagent.png" alt="Smartflux Console - File Upload">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <section class="bg-white text-slate-900 py-14 border-t border-gray-100">
+        <div class="max-w-6xl mx-auto px-6 flex flex-col md:flex-row items-center justify-between gap-6">
+            <div>
+                <p class="uppercase text-sm tracking-[0.2em] text-gray-400 mb-2">Ready to start?</p>
+                <h2 class="text-3xl font-bold text-slate-900">Want to build something?</h2>
+                <p class="text-gray-500 mt-2 max-w-2xl">Tell us what you have in mind and we'll make it a reality.</p>
+            </div>
+            <a href="/contact" class="portfolio-cta-button">
+                <span>Get in touch</span>
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" width="16" height="16"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>
+            </a>
         </div>
     </section>
+
+    <script>
+        (function() {
+            const sections = document.querySelectorAll('.portfolio-project-section, .portfolio-sub-section');
+            const imageSlides = document.querySelectorAll('.portfolio-image-slide');
+
+            if (sections.length === 0 || imageSlides.length === 0) return;
+
+            let currentActive = -1;
+
+            function updateActiveImage() {
+                const scrollMid = window.scrollY + window.innerHeight / 2;
+                let foundIndex = -1;
+
+                sections.forEach((section, index) => {
+                    const top = section.getBoundingClientRect().top + window.scrollY;
+                    const bottom = top + section.offsetHeight;
+                    if (scrollMid >= top && scrollMid < bottom) foundIndex = index;
+                });
+
+                if (foundIndex === -1) {
+                    const firstTop = sections[0].getBoundingClientRect().top + window.scrollY;
+                    if (window.scrollY < firstTop + sections[0].offsetHeight) foundIndex = 0;
+                }
+
+                if (foundIndex !== -1 && foundIndex !== currentActive) {
+                    currentActive = foundIndex;
+
+                    sections.forEach(s => s.classList.remove('active'));
+                    sections[foundIndex].classList.add('active');
+
+                    const targetImage = sections[foundIndex].getAttribute('data-image');
+                    if (targetImage) {
+                        imageSlides.forEach(slide => {
+                            slide.classList.toggle('active', slide.getAttribute('data-image') === targetImage);
+                        });
+                    }
+                }
+            }
+
+            let ticking = false;
+            window.addEventListener('scroll', () => {
+                if (!ticking) {
+                    window.requestAnimationFrame(() => { updateActiveImage(); ticking = false; });
+                    ticking = true;
+                }
+            }, { passive: true });
+
+            sections[0].classList.add('active');
+            updateActiveImage();
+        })();
+    </script>
 </main>
