@@ -5,19 +5,21 @@
 
     // Routes mapping
     function getRoutes() {
+        const lang = (window.smartfluxLang && window.smartfluxLang.getCurrentLang()) || 'nl';
+        const suffix = lang === 'en' ? '' : '-nl';
         return {
-            '/': '/content/home-nl.html',
-            '/about': '/content/about-nl.html',
-            '/services': '/content/services-nl.html',
-            '/werkwijze': '/content/werkwijze-nl.html',
-            '/portfolio': '/content/portfolio-nl.html',
-            '/contact': '/content/contact-nl.html',
-            '/legal/liability-ai-disclaimer': '/content/liability-ai-disclaimer-nl.html',
-            '/legal/data-processing-agreement': '/content/data-processing-agreement-nl.html',
-            '/legal/intellectual-property-rights': '/content/intellectual-property-rights-nl.html',
-            '/legal/service-level-agreement': '/content/service-level-agreement-nl.html',
-            '/legal/usage-api-billing': '/content/usage-api-billing-nl.html',
-            '/legal/terms-of-service': '/content/terms-of-service-nl.html'
+            '/': `/content/home${suffix}.html`,
+            '/about': `/content/about${suffix}.html`,
+            '/services': `/content/services${suffix}.html`,
+            '/werkwijze': `/content/werkwijze${suffix}.html`,
+            '/portfolio': `/content/portfolio${suffix}.html`,
+            '/contact': `/content/contact${suffix}.html`,
+            '/legal/liability-ai-disclaimer': `/content/liability-ai-disclaimer${suffix}.html`,
+            '/legal/data-processing-agreement': `/content/data-processing-agreement${suffix}.html`,
+            '/legal/intellectual-property-rights': `/content/intellectual-property-rights${suffix}.html`,
+            '/legal/service-level-agreement': `/content/service-level-agreement${suffix}.html`,
+            '/legal/usage-api-billing': `/content/usage-api-billing${suffix}.html`,
+            '/legal/terms-of-service': `/content/terms-of-service${suffix}.html`
         };
     }
 
@@ -139,7 +141,7 @@
     // Update document title
     function updatePageTitle(path) {
         const titles = {
-            '/': 'smartflux - Custom AI Solutions',
+            '/': 'smartflux - websites that deliver',
             '/about': 'About Us - smartflux',
             '/case-studies': 'Case Studies - smartflux',
             '/services': 'Diensten - smartflux sites',

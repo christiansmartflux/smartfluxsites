@@ -1,0 +1,502 @@
+<!-- Home Page Content - English -->
+<main class="home-main">
+<style>
+    .discover-console-button, .discover-console-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 6px 20px;
+        font-size: 1.1em;
+        font-weight: 600;
+        text-decoration: none;
+        color: #FFFFFF;
+        background-color: #000000;
+        border: 2px solid #000000;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    .home-main { overflow-x: hidden; }
+    .discover-console-button:hover {
+        background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+        color: #000000;
+        border-color: #4a90e2;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    }
+    .look-case-studies-button {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 8px;
+        padding: 6px 20px;
+        font-size: 1.1em;
+        font-weight: 600;
+        text-decoration: none;
+        color: #374151;
+        background-color: #F9FAFB;
+        border: 2px solid #D1D5DB;
+        border-radius: 12px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    .look-case-studies-button:hover {
+        background-color: #F3F4F6;
+        border-color: #9CA3AF;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    @media (max-width: 480px) {
+        .hero-buttons-wrapper { flex-direction: column; align-items: flex-start; }
+    }
+    .see-case-studies-button {
+        padding: 8px 8px;
+        font-size: 1em;
+        font-weight: 600;
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #000000;
+        border: 2px solid #000000;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        width: fit-content;
+    }
+    .see-case-studies-button:hover:not(:disabled):not(.loading) {
+        background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+        color: #000000;
+        border-color: #4a90e2;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    }
+    .see-case-studies-button:active:not(:disabled):not(.loading) {
+        transform: translateY(1px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+    .card-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 1.5rem;
+    }
+    .real-world-grid {
+        background-color: #f8fafc;
+        background-image:
+            linear-gradient(to right, rgba(99, 102, 241, 0.1) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(99, 102, 241, 0.1) 1px, transparent 1px);
+        background-size: 28px 28px;
+    }
+    @media (min-width: 768px) {
+        .card-container { grid-template-columns: repeat(2, 1fr); }
+    }
+    .card-title { font-size: 1.25rem; font-weight: 700; margin-bottom: 0.5rem; color: #1f2937; }
+    .card-description { color: #6b7280; }
+    .book-demo-button {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        padding: 10px 20px;
+        font-size: 0.9em;
+        font-weight: 600;
+        text-decoration: none;
+        color: #ffffff;
+        background-color: #000000;
+        border: 2px solid #000000;
+        border-radius: 12px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+        cursor: pointer;
+        margin-top: 1rem;
+    }
+    .book-demo-button:hover {
+        background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+        color: #000000;
+        border-color: #4a90e2;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    }
+    .book-demo-button svg { transition: transform 0.3s ease; width: 16px; height: 16px; stroke-width: 2; stroke: currentColor; }
+    .book-demo-button:active { transform: translateY(1px); box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15); }
+    html { scroll-behavior: smooth; }
+    .slide-track { display: flex; transition: transform 0.4s ease-in-out; width: 100%; }
+    .slide-track.dragging { transition: none !important; cursor: grabbing; }
+    .slide { min-width: 100%; flex-shrink: 0; }
+    .slide img { object-fit: cover; }
+    @media (max-width: 768px) { .slide img { object-fit: contain; } }
+    .no-scrollbar::-webkit-scrollbar { display: none; }
+    .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
+</style>
+
+    <div class="h-12"></div>
+
+    <!-- Hero -->
+    <section class="max-w-7xl mx-auto px-6 py-12">
+        <div class="grid md:grid-cols-2 gap-12 items-center">
+            <div>
+                <h1 class="text-5xl md:text-6xl font-bold leading-tight mb-6 text-slate-900">
+                    Websites that impress and deliver results
+                </h1>
+                <p class="text-xl text-gray-600 mb-10 max-w-lg leading-relaxed">
+                    We build sleek, fast websites for businesses serious about their online presence — with personal service and optional AI features.
+                </p>
+                <div class="flex flex-col sm:flex-row gap-4 hero-buttons-wrapper">
+                    <a href="/services" class="discover-console-button">Our services</a>
+                    <a href="/portfolio" class="look-case-studies-button">View our work</a>
+                </div>
+            </div>
+            <div class="h-96 bg-white rounded-2xl flex items-center justify-center text-gray-400">
+                <canvas id="hero-animation-canvas" style="width: 100%; height: 100%; border-radius: 16px;"></canvas>
+            </div>
+        </div>
+    </section>
+
+    <div class="h-24"></div>
+
+    <!-- USP banner -->
+    <section class="max-w-5xl mx-auto px-6 py-12 text-center bg-slate-50 border-2 border-slate-900 rounded-3xl mb-24">
+        <h2 class="text-5xl font-bold mb-4 text-slate-900">Your online presence, at its best</h2>
+        <p class="text-lg text-slate-700 max-w-2xl mx-auto mb-6">
+            From business sites to landing pages — we make sure your website doesn't just look good, it actually works for you.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-4 justify-center items-center">
+            <a href="/werkwijze" class="book-demo-button">
+                View our process
+                <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                </svg>
+            </a>
+        </div>
+    </section>
+
+<script>
+    if (typeof initHeroAnimation === 'function') {
+        setTimeout(() => { initHeroAnimation(); }, 100);
+    }
+    window.initCarousel = function() {};
+</script>
+
+    <div class="h-8"></div>
+
+    <!-- What we do cards -->
+    <section class="max-w-7xl mx-auto px-6 py-12 mb-8">
+        <div class="grid md:grid-cols-[35%_1fr] gap-12 lg:gap-20">
+            <div class="relative">
+                <div class="sticky top-32">
+                    <p class="uppercase text-sm tracking-[0.2em] text-blue-600 mb-4">What we offer</p>
+                    <h2 class="text-4xl md:text-5xl font-medium leading-tight mb-6">
+                        What can we build for you?
+                    </h2>
+                    <p class="text-lg text-gray-600 mb-8">
+                        Sleek websites that match your brand and turn visitors into customers.
+                    </p>
+                    <a href="/portfolio" class="discover-console-button">View our work</a>
+                </div>
+            </div>
+
+            <div class="flex flex-col">
+                <div class="group flex items-start gap-6 py-8 border-t border-gray-100 cursor-default">
+                    <span class="text-5xl font-bold text-gray-100 group-hover:text-blue-100 transition-colors duration-300 leading-none select-none w-14 flex-shrink-0 text-right">01</span>
+                    <div class="pt-1">
+                        <h4 class="text-xl font-semibold text-slate-900 mb-2">Business websites</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">A professional website that showcases your business at its best. Fully custom, fast and mobile-friendly — built to convert visitors.</p>
+                    </div>
+                </div>
+                <div class="group flex items-start gap-6 py-8 border-t border-gray-100 cursor-default">
+                    <span class="text-5xl font-bold text-gray-100 group-hover:text-blue-100 transition-colors duration-300 leading-none select-none w-14 flex-shrink-0 text-right">02</span>
+                    <div class="pt-1">
+                        <h4 class="text-xl font-semibold text-slate-900 mb-2">Web applications</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">More than a website. We build web applications with user accounts, login and personal dashboards — perfect for client portals, member environments or custom tools.</p>
+                    </div>
+                </div>
+                <div class="group flex items-start gap-6 py-8 border-t border-gray-100 cursor-default">
+                    <span class="text-5xl font-bold text-gray-100 group-hover:text-blue-100 transition-colors duration-300 leading-none select-none w-14 flex-shrink-0 text-right">03</span>
+                    <div class="pt-1">
+                        <h4 class="text-xl font-semibold text-slate-900 mb-2">Landing pages</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">One page, one goal. We build landing pages that convert — for campaigns, launches or specific services.</p>
+                    </div>
+                </div>
+                <div class="group flex items-start gap-6 py-8 border-t border-b border-gray-100 cursor-default">
+                    <span class="text-5xl font-bold text-gray-100 group-hover:text-blue-100 transition-colors duration-300 leading-none select-none w-14 flex-shrink-0 text-right">04</span>
+                    <div class="pt-1">
+                        <h4 class="text-xl font-semibold text-slate-900 mb-2">AI integrations</h4>
+                        <p class="text-gray-500 text-sm leading-relaxed">Add a smart chatbot, automate visitor questions or personalise the experience. AI as an extra layer on top of your website.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client showcase -->
+    <section class="relative py-20 bg-white">
+        <div class="text-center mb-12 px-6">
+            <h2 class="text-5xl font-bold mb-4 text-slate-900">Our work in practice</h2>
+            <p class="text-lg text-slate-600 max-w-2xl mx-auto">
+                See how we've built a strong online presence for our clients.
+            </p>
+        </div>
+
+        <div class="nl-showcase-carousel-container w-full md:w-screen md:relative md:left-1/2 md:right-1/2 md:-mx-[50vw] overflow-hidden cursor-grab active:cursor-grabbing">
+            <div class="nl-showcase-padding-wrapper">
+                <div class="nl-showcase-track flex transition-transform duration-300 ease-out" id="nl-showcase-track">
+
+                    <div class="nl-showcase-card flex-shrink-0" data-card-index="0">
+                        <div class="relative bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden p-6 h-full flex flex-row gap-6 items-center">
+                            <div class="flex-1 space-y-3">
+                                <span class="px-2 py-0.5 bg-blue-50 border border-blue-200 text-blue-700 rounded-lg text-xs font-bold uppercase tracking-wider inline-block">Business website</span>
+                                <h3 class="text-2xl font-bold text-slate-900">The Skin Health Society</h3>
+                                <p class="text-gray-600 text-sm">A sleek, professional website for a skin health platform. Focused on trust, readability and a strong first impression.</p>
+                                <a href="https://theskinhealthsociety.com" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm transition-colors duration-200 mt-1">
+                                    View the site
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                </a>
+                            </div>
+                            <div class="nl-showcase-image-wrap flex-shrink-0">
+                                <img src="/slides/SHS.png" alt="The Skin Health Society" class="w-full h-full object-contain">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nl-showcase-card flex-shrink-0" data-card-index="1">
+                        <div class="relative bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden p-6 h-full flex flex-row gap-6 items-center">
+                            <div class="flex-1 space-y-3">
+                                <span class="px-2 py-0.5 bg-blue-50 border border-blue-200 text-blue-700 rounded-lg text-xs font-bold uppercase tracking-wider inline-block">AI Platform</span>
+                                <h3 class="text-2xl font-bold text-slate-900">Smartflux AI</h3>
+                                <p class="text-gray-600 text-sm">A modern AI platform for businesses. Intelligent chatbots, document analysis and custom AI solutions under one roof.</p>
+                                <a href="https://smartflux.ai" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm transition-colors duration-200 mt-1">
+                                    View the site
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                </a>
+                            </div>
+                            <div class="nl-showcase-image-wrap flex-shrink-0">
+                                <img src="/slides/smartflux.ai.png?v=2" alt="Smartflux AI" class="w-full h-full object-contain">
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="nl-showcase-card flex-shrink-0" data-card-index="2">
+                        <div class="relative bg-gradient-to-br from-gray-50 to-white rounded-xl border border-gray-200 shadow-sm hover:shadow-md transition-all duration-300 overflow-hidden p-6 h-full flex flex-row gap-6 items-center">
+                            <div class="flex-1 space-y-3">
+                                <span class="px-2 py-0.5 bg-blue-50 border border-blue-200 text-blue-700 rounded-lg text-xs font-bold uppercase tracking-wider inline-block">AI Console</span>
+                                <h3 class="text-2xl font-bold text-slate-900">Smartflux Console</h3>
+                                <p class="text-gray-600 text-sm">The personal dashboard where clients access their AI tools. Secure, organised and always available.</p>
+                                <a href="https://console.smartflux.ai" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-2 text-blue-600 hover:text-blue-700 font-semibold text-sm transition-colors duration-200 mt-1">
+                                    View the console
+                                    <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path></svg>
+                                </a>
+                            </div>
+                            <div class="nl-showcase-image-wrap flex-shrink-0">
+                                <img src="/slides/smartfluxconsole.png" alt="Smartflux Console" class="w-full h-full object-contain">
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+        <div class="flex items-center justify-center gap-4 mt-6">
+            <button id="nl-showcase-prev" class="w-10 h-10 rounded-full border border-gray-200 bg-white shadow-sm flex items-center justify-center text-gray-400 hover:text-blue-600 hover:border-blue-300 transition-all duration-200" aria-label="Previous">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 19l-7-7 7-7"></path></svg>
+            </button>
+            <button id="nl-showcase-next" class="w-10 h-10 rounded-full border border-gray-200 bg-white shadow-sm flex items-center justify-center text-gray-400 hover:text-blue-600 hover:border-blue-300 transition-all duration-200" aria-label="Next">
+                <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"></path></svg>
+            </button>
+        </div>
+    </section>
+
+<style>
+.nl-showcase-carousel-container { user-select: none; -webkit-user-select: none; touch-action: pan-y pinch-zoom; }
+.nl-showcase-padding-wrapper { padding-left: max(1.5rem, calc((100vw - 80rem) / 2 + 1.5rem)); padding-right: max(1.5rem, calc((100vw - 80rem) / 2 + 1.5rem)); }
+.nl-showcase-track { will-change: transform; gap: 1.5rem; }
+.nl-showcase-track.dragging { transition: none !important; }
+.nl-showcase-card { width: 600px; height: 220px; }
+.nl-showcase-image-wrap { width: 240px; height: 150px; aspect-ratio: 16/10; }
+.nl-showcase-carousel-container.dragging .nl-showcase-card { cursor: grabbing; }
+@media (max-width: 768px) {
+    .nl-showcase-card { width: 82vw; height: auto; min-height: 220px; flex-direction: column; }
+    .nl-showcase-image-wrap { width: 100%; height: 140px; }
+    .nl-showcase-padding-wrapper { padding-left: 5vw; padding-right: 5vw; }
+    .nl-showcase-track { gap: 0.75rem; }
+}
+</style>
+
+<script>
+function initNlShowcaseCarousel() {
+    const container = document.querySelector('.nl-showcase-carousel-container');
+    const track = document.getElementById('nl-showcase-track');
+    if (!container || !track) return;
+    const cards = track.querySelectorAll('.nl-showcase-card');
+    if (cards.length <= 1) { container.style.cursor = 'default'; return; }
+    let isDragging = false, hasMoved = false, startX = 0, previousTranslate = 0, currentTranslate = 0, animationID = null, velocityX = 0, lastX = 0, lastTime = Date.now(), baseTranslate = 0;
+    const getCardWidth = () => cards[0] ? cards[0].offsetWidth : 600;
+    const getGap = () => parseFloat(window.getComputedStyle(track).gap) || 24;
+    function getBoundaries() {
+        const cw = getCardWidth(), gap = getGap(), trackWidth = (cw + gap) * cards.length - gap;
+        const pl = parseFloat(window.getComputedStyle(track.parentElement).paddingLeft) || 0;
+        const pr = parseFloat(window.getComputedStyle(track.parentElement).paddingRight) || 0;
+        return { min: Math.min(0, -(trackWidth - container.offsetWidth + pl + pr)), max: 0 };
+    }
+    function pointerDown(e) {
+        isDragging = true; hasMoved = false;
+        startX = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+        lastX = startX; lastTime = Date.now(); velocityX = 0; baseTranslate = previousTranslate;
+        if (animationID) { cancelAnimationFrame(animationID); animationID = null; }
+    }
+    function pointerMove(e) {
+        if (!isDragging) return;
+        const cur = e.type.includes('mouse') ? e.pageX : e.touches[0].clientX;
+        const delta = cur - startX;
+        if (!hasMoved && Math.abs(delta) > 6) { hasMoved = true; container.classList.add('dragging'); track.classList.add('dragging'); }
+        if (!hasMoved) return;
+        if (e.type.includes('touch')) e.preventDefault();
+        const now = Date.now(), dt = now - lastTime;
+        if (dt > 0) velocityX = (cur - lastX) / dt;
+        lastX = cur; lastTime = now;
+        currentTranslate = baseTranslate + delta;
+        const b = getBoundaries();
+        if (currentTranslate > b.max) currentTranslate = b.max + (currentTranslate - b.max) * 0.3;
+        else if (currentTranslate < b.min) currentTranslate = b.min + (currentTranslate - b.min) * 0.3;
+        track.style.transform = `translateX(${currentTranslate}px)`;
+    }
+    function snapToNearest(b) {
+        const step = getCardWidth() + getGap();
+        const idx = Math.round(-currentTranslate / step);
+        const target = Math.max(b.min, Math.min(b.max, -idx * step));
+        track.classList.remove('dragging');
+        track.style.transform = `translateX(${target}px)`;
+        previousTranslate = currentTranslate = target;
+    }
+    function pointerUp() {
+        if (!isDragging) return;
+        isDragging = false;
+        container.classList.remove('dragging'); track.classList.remove('dragging');
+        if (!hasMoved) return;
+        const b = getBoundaries();
+        if (Math.abs(velocityX) > 0.5) {
+            const friction = 0.95;
+            (function momentum() {
+                velocityX *= friction; currentTranslate += velocityX * 16;
+                if (currentTranslate > b.max) { currentTranslate = b.max; velocityX = 0; }
+                else if (currentTranslate < b.min) { currentTranslate = b.min; velocityX = 0; }
+                track.style.transform = `translateX(${currentTranslate}px)`;
+                if (Math.abs(velocityX) > 0.05) animationID = requestAnimationFrame(momentum);
+                else snapToNearest(b);
+            })();
+        } else { snapToNearest(b); }
+    }
+    container.addEventListener('mousedown', pointerDown);
+    document.addEventListener('mousemove', pointerMove);
+    document.addEventListener('mouseup', pointerUp);
+    container.addEventListener('touchstart', pointerDown, { passive: false });
+    document.addEventListener('touchmove', pointerMove, { passive: false });
+    document.addEventListener('touchend', pointerUp);
+    let resizeTimeout;
+    window.addEventListener('resize', () => { clearTimeout(resizeTimeout); resizeTimeout = setTimeout(() => snapToNearest(getBoundaries()), 150); });
+    track.style.transform = 'translateX(0px)'; previousTranslate = 0; currentTranslate = 0;
+    let currentIndex = 0;
+    function goTo(index) {
+        const b = getBoundaries();
+        const step = getCardWidth() + getGap();
+        const target = Math.max(b.min, Math.min(b.max, -index * step));
+        track.classList.remove('dragging');
+        track.style.transition = 'transform 300ms ease-out';
+        track.style.transform = `translateX(${target}px)`;
+        previousTranslate = currentTranslate = target;
+        currentIndex = index;
+    }
+    document.getElementById('nl-showcase-prev')?.addEventListener('click', () => goTo(Math.max(0, currentIndex - 1)));
+    document.getElementById('nl-showcase-next')?.addEventListener('click', () => goTo(Math.min(cards.length - 1, currentIndex + 1)));
+}
+if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', initNlShowcaseCarousel);
+else initNlShowcaseCarousel();
+window.initNlShowcaseCarousel = initNlShowcaseCarousel;
+</script>
+
+    <!-- AI section -->
+    <section class="max-w-7xl mx-auto px-6 py-20">
+        <div class="grid md:grid-cols-[35%_1fr] gap-12 lg:gap-20 items-start">
+            <div class="sticky top-32">
+                <p class="uppercase text-sm tracking-[0.2em] text-blue-600 mb-4">AI capabilities</p>
+                <h2 class="text-4xl md:text-5xl font-bold mb-6 leading-tight">What can AI do for your website?</h2>
+                <p class="text-lg text-gray-600 mb-8">
+                    We add smart features that make your website work like an employee — even outside office hours.
+                </p>
+                <a href="/services" class="discover-console-button">View all services</a>
+            </div>
+
+            <div class="grid grid-cols-1 gap-6">
+                <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm flex gap-4 items-start">
+                    <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z"></path></svg>
+                    </div>
+                    <div class="flex-1">
+                        <div class="flex items-center gap-3 mb-1">
+                            <h3 class="font-semibold text-slate-900">AI chatbot</h3>
+                            <button onclick="openSmartfluxChat()" class="look-case-studies-button" style="font-size: 0.8em; padding: 3px 12px;">Try it</button>
+                        </div>
+                        <p class="text-gray-600 text-sm">A chatbot that answers visitor questions based on your own content — 24/7, without you having to do anything.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm flex gap-4 items-start">
+                    <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-3 mb-1">
+                            <h3 class="font-semibold text-slate-900">Smart contact form</h3>
+                            <a href="/contact" class="look-case-studies-button" style="font-size: 0.8em; padding: 3px 12px;">Try it</a>
+                        </div>
+                        <p class="text-gray-600 text-sm">A form that pre-qualifies and sorts requests, so you only receive relevant enquiries — no noise, only valuable leads.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm flex gap-4 items-start">
+                    <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"></path></svg>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-3 mb-1">
+                            <h3 class="font-semibold text-slate-900">AI-powered search</h3>
+                            <button class="look-case-studies-button" style="font-size: 0.8em; padding: 3px 12px;">Try it</button>
+                        </div>
+                        <p class="text-gray-600 text-sm">Visitors search in natural language and instantly find the right answer from your content — no endless clicking through pages.</p>
+                    </div>
+                </div>
+                <div class="bg-white rounded-2xl border border-gray-100 p-6 shadow-sm flex gap-4 items-start">
+                    <div class="flex-shrink-0 w-10 h-10 bg-blue-100 rounded-lg flex items-center justify-center">
+                        <svg class="w-5 h-5 text-blue-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+                    </div>
+                    <div>
+                        <div class="flex items-center gap-3 mb-1">
+                            <h3 class="font-semibold text-slate-900">Automated follow-up</h3>
+                        </div>
+                        <p class="text-gray-600 text-sm">After a contact moment, the site automatically sends a relevant follow-up — based on what the visitor viewed. Never miss a lead again.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr class="border-t border-gray-200 max-w-7xl mx-auto">
+
+    <!-- Final CTA -->
+    <section class="py-16">
+        <div class="max-w-7xl mx-auto px-6 text-center">
+            <div class="space-y-6">
+                <h2 class="text-5xl md:text-6xl font-medium text-slate-900 leading-tight">
+                    Ready for a website<br>
+                    <span class="text-5xl md:text-6xl font-bold">that works for you?</span>
+                </h2>
+                <div class="pt-4">
+                    <a href="/contact" class="book-demo-button">
+                        <span>Request a free quote</span>
+                        <svg fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>

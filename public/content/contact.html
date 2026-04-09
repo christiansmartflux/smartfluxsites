@@ -1,0 +1,230 @@
+<!-- Contact Page Content - English -->
+<style>
+    #contact-send-btn {
+        cursor: pointer;
+    }
+    #contact-send-btn:disabled,
+    #contact-send-btn.loading {
+        background-color: #666666;
+        border-color: #666666;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        cursor: not-allowed;
+    }
+    #contact-send-btn:hover:not(:disabled):not(.loading) {
+        background: linear-gradient(135deg, #f8fafc, #e2e8f0);
+        color: #000000;
+        border-color: #4a90e2;
+        box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+    }
+    #contact-send-btn:active:not(:disabled):not(.loading) {
+        transform: translateY(1px);
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    }
+</style>
+
+<main class="flex-grow">
+    <div class="max-w-7xl mx-auto px-6 pt-6 pb-16">
+        <div class="grid md:grid-cols-2 gap-6">
+
+            <!-- Contact Form -->
+            <div class="bg-white rounded-lg shadow border border-gray-200">
+                <div class="p-6 space-y-6">
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Your name <span class="text-red-500">*</span></label>
+                            <input type="text" name="name" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="John Smith">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Company name</label>
+                            <input type="text" name="company" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Your Company Ltd">
+                        </div>
+                    </div>
+
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Email address <span class="text-red-500">*</span></label>
+                            <input type="email" name="email" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="john@company.com">
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Phone number</label>
+                            <input type="tel" name="phone" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="+31 6 12 34 56 78">
+                        </div>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">What do you need? <span class="text-red-500">*</span></label>
+                        <select name="interest" required class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                            <option value="">Select an option</option>
+                            <option value="bedrijfswebsite">A new business website</option>
+                            <option value="webapplicatie">A web application or client portal</option>
+                            <option value="landingspagina">A landing page</option>
+                            <option value="redesign">Redesign of an existing website</option>
+                            <option value="ai-integratie">AI integration on an existing site</option>
+                            <option value="onderhoud">Maintenance or adjustments</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div>
+                        <label class="block text-sm font-medium text-gray-700 mb-2">Tell us more about your project</label>
+                        <textarea name="challenge" rows="3" class="w-full px-3 py-2 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent resize-vertical" placeholder="What do you want to achieve? Ideas about style, functionality or target audience?"></textarea>
+                    </div>
+
+                    <div class="grid grid-cols-1 sm:grid-cols-2 gap-4 items-end">
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">Desired budget</label>
+                            <select name="companySize" class="w-full px-3 py-2 h-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none">
+                                <option value="">Select a range</option>
+                                <option value="onder-1000">Under €1,000</option>
+                                <option value="1000-2500">€1,000 – €2,500</option>
+                                <option value="2500-5000">€2,500 – €5,000</option>
+                                <option value="5000-plus">€5,000+</option>
+                                <option value="nader-te-bepalen">To be determined</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-sm font-medium text-gray-700 mb-2">How did you find us?</label>
+                            <select name="referral" class="w-full px-3 py-2 h-10 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-transparent appearance-none">
+                                <option value="">Select option</option>
+                                <option value="google">Google</option>
+                                <option value="social">Social media</option>
+                                <option value="referral">Word of mouth</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div id="status-message" class="hidden p-3 rounded-lg"></div>
+
+                    <div class="flex justify-center">
+                        <button type="button" id="contact-send-btn" class="bg-black border-2 border-black text-white px-6 py-3 rounded-xl font-bold text-base transition-all flex items-center gap-2" style="box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);">
+                            <span>Send request</span>
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path>
+                            </svg>
+                        </button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Information Panel -->
+            <div class="bg-white rounded-lg shadow border border-gray-200">
+                <div class="p-6">
+                    <h2 class="text-xl font-bold text-gray-800 mb-4">Get in touch</h2>
+                    <div class="space-y-4 text-gray-600">
+                        <p>
+                            Tell us what you need — we'll send you a no-obligation quote within one business day. No standard packages, no hidden costs.
+                        </p>
+                        <p>
+                            We take the time to understand your situation properly and put together a proposal that truly fits your business.
+                        </p>
+                        <h3 class="font-semibold text-gray-800 mt-6 mb-3">What happens next:</h3>
+                        <ul class="space-y-3">
+                            <li class="flex items-start gap-3">
+                                <span class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 text-blue-700 text-xs font-bold flex items-center justify-center mt-0.5">1</span>
+                                <span>We review your request and get back to you within one business day.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 text-blue-700 text-xs font-bold flex items-center justify-center mt-0.5">2</span>
+                                <span>We schedule a short introductory call to fully understand your wishes.</span>
+                            </li>
+                            <li class="flex items-start gap-3">
+                                <span class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 text-blue-700 text-xs font-bold flex items-center justify-center mt-0.5">3</span>
+                                <span>You receive a custom proposal — including scope, timeline and fixed price.</span>
+                            </li>
+                        </ul>
+                        <div class="mt-6 pt-6 border-t border-gray-100 space-y-2 text-sm">
+                            <p class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+                                (+31) 6 390-308-61
+                            </p>
+                            <p class="flex items-center gap-2">
+                                <svg class="w-4 h-4 text-blue-600 flex-shrink-0" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                                Vlotlaan 805a, Monster
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</main>
+
+<script>
+function initContactForm() {
+    const contactBtn = document.getElementById('contact-send-btn');
+    const statusDiv = document.getElementById('status-message');
+
+    function showStatus(message, type = 'success') {
+        if (statusDiv) {
+            statusDiv.className = `p-3 rounded-lg ${type === 'success' ? 'bg-green-50 border border-green-200 text-green-700' : 'bg-red-50 border border-red-200 text-red-700'}`;
+            statusDiv.textContent = message;
+            statusDiv.classList.remove('hidden');
+        }
+    }
+
+    if (contactBtn) {
+        contactBtn.addEventListener('click', async function(e) {
+            e.preventDefault();
+
+            const formData = {
+                name: document.querySelector('input[name="name"]').value.trim(),
+                company: document.querySelector('input[name="company"]').value.trim(),
+                email: document.querySelector('input[name="email"]').value.trim(),
+                phone: document.querySelector('input[name="phone"]').value.trim(),
+                interest: document.querySelector('select[name="interest"]').value,
+                challenge: document.querySelector('textarea[name="challenge"]').value.trim(),
+                companySize: document.querySelector('select[name="companySize"]').value,
+                referral: document.querySelector('select[name="referral"]').value,
+                submittedAt: new Date().toISOString()
+            };
+
+            if (!formData.name || !formData.email || !formData.interest) {
+                showStatus('Please fill in all required fields (name, email and request type).', 'error');
+                return;
+            }
+
+            const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+            if (!emailRegex.test(formData.email)) {
+                showStatus('Please enter a valid email address.', 'error');
+                return;
+            }
+
+            contactBtn.disabled = true;
+            contactBtn.innerHTML = '<span>Sending...</span>';
+
+            try {
+                const response = await fetch('https://initn8n-c7f5bqcjbndegxbq.swedencentral-01.azurewebsites.net/webhook/05b6f7e3-d09f-401c-9ec1-2227548a854e', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'x-webhook-secret': 'f3112c2283549e63d2c1a9d74d552be28b82f5c097560bafc5b0dcbacff45955'
+                    },
+                    body: JSON.stringify(formData)
+                });
+
+                if (response.ok) {
+                    showStatus('Thank you! Your request has been sent. We\'ll get back to you within one business day.', 'success');
+                    document.querySelectorAll('input, select, textarea').forEach(el => el.value = '');
+                } else {
+                    throw new Error(`HTTP ${response.status}`);
+                }
+            } catch (error) {
+                console.error('Form submission error:', error);
+                showStatus('Something went wrong while sending. Please try again or call us directly.', 'error');
+            } finally {
+                contactBtn.disabled = false;
+                contactBtn.innerHTML = '<span>Send request</span><svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3"></path></svg>';
+            }
+        });
+    }
+}
+
+if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', initContactForm);
+} else {
+    initContactForm();
+}
+</script>
