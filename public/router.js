@@ -140,7 +140,24 @@
 
     // Update document title
     function updatePageTitle(path) {
-        const titles = {
+        const lang = (window.smartfluxLang && window.smartfluxLang.getCurrentLang()) || 'nl';
+        const titles = lang === 'nl' ? {
+            '/': 'smartflux - websites die leveren',
+            '/about': 'Over ons - smartflux',
+            '/case-studies': 'Case Studies - smartflux',
+            '/services': 'Diensten - smartflux sites',
+            '/werkwijze': 'Werkwijze - smartflux sites',
+            '/portfolio': 'Portfolio - smartflux sites',
+            '/console': 'Console - smartflux',
+            '/console-experience': 'Ervaar de Console - smartflux',
+            '/contact': 'Contact - smartflux',
+            '/legal/liability-ai-disclaimer': 'Aansprakelijkheid & AI Disclaimer - smartflux',
+            '/legal/data-processing-agreement': 'Verwerkersovereenkomst - smartflux',
+            '/legal/intellectual-property-rights': 'Intellectueel Eigendom - smartflux',
+            '/legal/service-level-agreement': 'Service Level Agreement - smartflux',
+            '/legal/usage-api-billing': 'Gebruik & API Facturering - smartflux',
+            '/legal/terms-of-service': 'Algemene Voorwaarden - smartflux'
+        } : {
             '/': 'smartflux - websites that deliver',
             '/about': 'About Us - smartflux',
             '/case-studies': 'Case Studies - smartflux',
