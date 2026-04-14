@@ -114,7 +114,7 @@
                     <h2 class="text-xl font-bold text-gray-800 mb-4">Neem contact op</h2>
                     <div class="space-y-4 text-gray-600">
                         <p>
-                            Vertel ons wat u nodig heeft — wij sturen u binnen één werkdag een vrijblijvende offerte. Geen standaardpakketten, geen verborgen kosten.
+                            Vertel ons wat u nodig heeft — wij sturen u zo snel mogelijk een vrijblijvende offerte. Geen standaardpakketten, geen verborgen kosten.
                         </p>
                         <p>
                             Wij nemen de tijd om uw situatie goed te begrijpen en stellen een voorstel op dat écht bij uw bedrijf past.
@@ -123,7 +123,7 @@
                         <ul class="space-y-3">
                             <li class="flex items-start gap-3">
                                 <span class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 text-blue-700 text-xs font-bold flex items-center justify-center mt-0.5">1</span>
-                                <span>Wij bekijken uw aanvraag en nemen binnen één werkdag contact op.</span>
+                                <span>Wij bekijken uw aanvraag en nemen zo snel mogelijk contact op.</span>
                             </li>
                             <li class="flex items-start gap-3">
                                 <span class="flex-shrink-0 w-6 h-6 rounded-full bg-blue-100 text-blue-700 text-xs font-bold flex items-center justify-center mt-0.5">2</span>
@@ -196,7 +196,7 @@ function initContactForm() {
             contactBtn.innerHTML = '<span>Verzenden...</span>';
 
             try {
-                const response = await fetch('https://initn8n-c7f5bqcjbndegxbq.swedencentral-01.azurewebsites.net/webhook/05b6f7e3-d09f-401c-9ec1-2227548a854e', {
+                const response = await fetch('https://smartflux-n8n.azurewebsites.net/webhook/05b6f7e3-d09f-401c-9ec1-2227548a854e', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
@@ -206,7 +206,7 @@ function initContactForm() {
                 });
 
                 if (response.ok) {
-                    showStatus('Bedankt! Uw aanvraag is verzonden. We nemen binnen één werkdag contact met u op.', 'success');
+                    showStatus('Bedankt! Uw aanvraag is verzonden. We nemen zo snel mogelijk contact met u op.', 'success');
                     document.querySelectorAll('input, select, textarea').forEach(el => el.value = '');
                 } else {
                     throw new Error(`HTTP ${response.status}`);
