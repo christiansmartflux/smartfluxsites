@@ -2,7 +2,7 @@
 (function() {
     // Configuration - Your webhook URL
     const CONFIG = {
-        WEBHOOK_URL: 'https://initn8n-c7f5bqcjbndegxbq.swedencentral-01.azurewebsites.net/webhook/c9224d60-00bf-49a8-8071-57a6d0fbf07e'
+        WEBHOOK_URL: 'https://smartflux-n8n.azurewebsites.net/webhook/cba839fc-4c07-486a-a404-8cbb0df44008'
     };
 
     // Inject widget HTML
